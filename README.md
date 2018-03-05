@@ -1,7 +1,7 @@
 # GSuite Signature Manager (PHP)
 Ensure that all your users have a standard signature by updating them using the gmail API. Users signatures can be updated direct from the GSuite users directory using standard and custom fields or alternatively from a JSON users file.
 
-![alt text](https://github.com/moometric/GSuiteSignatureManager/blob/master/sig.png?raw=true "GSuite Signature Manager")
+![alt text](https://raw.githubusercontent.com/moometric/GSuiteSignatureManager/master/sig.png "GSuite Signature Manager")
 
 - **defaultSig.html** template is included, you can add your own templates to the "signatures" directory.
 - **testUsers.json** JSON file is included as an example when fetching users from local source rather than GSuite domain.
