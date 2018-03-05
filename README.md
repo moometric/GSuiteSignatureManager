@@ -31,7 +31,7 @@ https://www.googleapis.com/auth/admin.directory.user', 'https://www.googleapis.c
 
 #### Step 3: Install or clone this repo
 ```
-composer require 
+composer require moometric/gsuite
 ```
 OR
 ```
