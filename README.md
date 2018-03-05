@@ -1,6 +1,3 @@
-
-[![Github Releases](https://img.shields.io/github/downloads/atom/atom/latest/total.svg)](https://github.com/moometric/GSuiteSignatureManager)
-
 # GSuite Signature Manager (PHP)
 Ensure that all your users have a standard signature by updating them using the gmail API. Users signatures can be updated direct from the GSuite users directory using standard and custom fields or alternatively from a JSON users file.
 
