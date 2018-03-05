@@ -41,7 +41,7 @@ git clone https://github.com/moometric/GSuiteSignatureManager.git
 #### Step 4: Update your signature template
 By default there is a signature template located in **"signatures/defaultSig.html"**. You can modify this template and include your own MERGE fields.
 
-Merge fields are in the following format **{{mergeFieldOne}}**. If you're not sure what merge fields you can use, use *[listMergeFields()](##user-content-see-a-list-of-available-merge-tags)* function to view a list of available merge tags.
+Merge fields are in the following format **{{mergeFieldOne}}**. If you're not sure what merge fields you can use, use *[listMergeFields()](#user-content-see-a-list-of-available-merge-tags)* function to view a list of available merge tags.
 
 #### Step 5: Instantiate the signature object
 If using composer, don't forget to include your autoload file.
