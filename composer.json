@@ -1,0 +1,23 @@
+{
+    "name": "moometric/gsuite",
+    "description": "Simple PHP library to manage GSuite users signatures",
+    "homepage": "https://github.com/moometric/GSuiteSignatureManager",
+    "keywords": ["gsuite", "signature", "gmail", "api"],
+    "type": "library",
+    "license": "MIT",
+     "authors": [
+        {
+            "name": "Moometric MooMaster",
+            "email": "webmaster@moometric.com"
+        }
+    ],
+    "require": {
+    	"google/apiclient": "^2.0",
+    	"php": ">=5.3.0"
+    },
+    "autoload": {
+   		"psr-4": {
+    		"Moometric\\": "src/"
+    	}
+    }
+}

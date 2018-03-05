@@ -1,0 +1,18 @@
+[
+	{
+		"primaryEmail": "fakeEmail@moometric.com",
+		"alias": "fakeEmail@moometric.com",
+		"thumbnailPhotoUrl": "https://i.imgur.com/JRF8XKq.png",
+		"fullName": "MooMaster",
+		"phone0": "555-555-555",
+		"title": "IT Admin / Developer"
+	},
+	{
+		"primaryEmail": "anotherEmail@moometric.com",
+		"alias": "anotherEmail@moometric.com",
+		"thumbnailPhotoUrl": "https://i.imgur.com/JRF8XKq.png",
+		"fullName": "MooMinor",
+		"phone0": "444-444-444",
+		"title": "DevOps Admin"
+	}
+]
