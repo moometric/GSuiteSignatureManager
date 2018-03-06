@@ -1,5 +1,5 @@
 
-[![Packagist](https://img.shields.io/packagist/dt/moometric/gsuite.svg)](https://github.com/moometric/GSuiteSignatureManager/?maxAge=3600) [![Version](http://img.shields.io/packagist/v/moometric/GSuite.svg?style=flat&maxAge=3600)](https://packagist.org/packages/moometric/GSuite) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Packagist](https://img.shields.io/packagist/dt/moometric/gsuite.svg?maxAge=3600)](https://github.com/moometric/GSuiteSignatureManager/) [![Version](http://img.shields.io/packagist/v/moometric/GSuite.svg?style=flat&maxAge=3600)](https://packagist.org/packages/moometric/GSuite) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 
 # GSuite Signature Manager (PHP)
