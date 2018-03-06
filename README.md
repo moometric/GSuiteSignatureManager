@@ -144,17 +144,17 @@ In this example only users who are in the array below will be updated with a new
 
 ```php
 $mooSig->addSettingUserArray([
-							[
-								"primaryEmail" => "fakeEmail@moometric.com", 
-								"alias" => "fakeEmail@moometric.com", 
-								"fullName" => "MooMaster",
-							],
-							[
-								"primaryEmail" => "anotherEmail@moometric.com", 
-								"alias" => "anotherEmail@moometric.com", 
-								"fullName" => "MooMinor",
-							]
-						]);
+	[
+		"primaryEmail" => "fakeEmail@moometric.com", 
+		"alias" => "fakeEmail@moometric.com", 
+		"fullName" => "MooMaster",
+	],
+	[
+		"primaryEmail" => "anotherEmail@moometric.com", 
+		"alias" => "anotherEmail@moometric.com", 
+		"fullName" => "MooMinor",
+	]
+]);
 $mooSig->updateSignatures();
 ```
 
@@ -252,23 +252,23 @@ $mooSig->addSettingMOTD(True);
 If you would prefer to get the users details from an array rather than the GSuite directory, you can push your own custom users array along with all the details for the signatures you wish to update. For this option you must include the **primaryEmail** and **alias** in each user array.
 ```php
 $mooSig->addSettingUserArray([
-							[
-								"primaryEmail" => "fakeEmail@moometric.com", 
-								"alias" => "fakeEmail@moometric.com", 
-								"thumbnailPhotoUrl" => "http://i.imgur.com/mmvUt5x.png",
-								"fullName" => "MooMaster",
-								"phone0" => "555-555-555",
-								"title" => "IT Admin / Developer"
-							],
-							[
-								"primaryEmail" => "anotherEmail@moometric.com", 
-								"alias" => "anotherEmail@moometric.com", 
-								"thumbnailPhotoUrl" => "http://i.imgur.com/mmvUt5x.png",
-								"fullName" => "MooMinor",
-								"phone0" => "444-444-444",
-								"title" => "DevOps Admin"
-							]
-						]);
+	[
+		"primaryEmail" => "fakeEmail@moometric.com", 
+		"alias" => "fakeEmail@moometric.com", 
+		"thumbnailPhotoUrl" => "http://i.imgur.com/mmvUt5x.png",
+		"fullName" => "MooMaster",
+		"phone0" => "555-555-555",
+		"title" => "IT Admin / Developer"
+	],
+	[
+		"primaryEmail" => "anotherEmail@moometric.com", 
+		"alias" => "anotherEmail@moometric.com", 
+		"thumbnailPhotoUrl" => "http://i.imgur.com/mmvUt5x.png",
+		"fullName" => "MooMinor",
+		"phone0" => "444-444-444",
+		"title" => "DevOps Admin"
+	]
+]);
 ```
 
 #### Get users from JSON file *(Default = "")*
