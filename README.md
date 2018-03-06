@@ -1,4 +1,5 @@
-[![Github All Releases](https://img.shields.io/github/downloads/moometric/GSuiteSignatureManager/total.svg)](https://github.com/moometric/GSuiteSignatureManager) 
+
+[![Github All Releases](https://img.shields.io/github/downloads/moometric/GSuiteSignatureManager/total.svg)](https://github.com/moometric/GSuiteSignatureManager) [![Version](http://img.shields.io/packagist/v/moometric/GSuite.svg?style=flat)](https://packagist.org/packages/moometric/GSuite) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 
 # GSuite Signature Manager (PHP)
