@@ -28,34 +28,54 @@ class mooSignature {
 
 	// Setting variables and arrays
 	public $settingRemoveBlanks = True;
-	public $settingSkipConditions = [];
 	public $settingEmailTemplate;
 	public $settingUsersArrayGsuite = True;
+
+	// Filter settings
+	public $settingSkipConditions = [];
+	public $settingEmailFilter = [];
+
+	// MOTD Settings
 	public $settingMOTDHTML;
 	public $settingMOTDPosition = "Below";
 	public $settingMOTD = True;
 	public $settingTestingMode = False;
 	public $settingPreviewTemplate = True;
-	public $settingEmailFilter = [];
+
+	// Path settings for local variables/templates
+	public $settingJSONPath = __DIR__ . '/../local_vars/';
+	public $settingSignaturePath =  __DIR__ . '/../signatures/';
+	public $settingServiceAccountPath = __DIR__ . '/../local_vars/';
 
 	public function __construct($domain, $admin_email) {
-		$dir = 'GOOGLE_APPLICATION_CREDENTIALS=' .  __DIR__  . '/../local_vars/service-account.json';
-		putenv("$dir");
-		$this->settingEmailTemplate = file_get_contents( __DIR__ . '/../signatures/defaultSig.html');
-        $this->domain = $domain;
+		$this->domain = $domain;
         $this->admin_email = $admin_email;
-        $this->googleClient = mooSignature::googleClientConnect();
-        $this->googleServiceDirectory = new \Google_Service_Directory($this->googleClient);
-        $this->googleServiceGmail = new \Google_Service_Gmail($this->googleClient);
-        $this->googleServiceGmailSendAs = new \Google_Service_Gmail_SendAs();
+
+		if (file_exists($this->settingServiceAccountPath . 'service-account.json')) {
+			$this->settingServiceAccountPath = 'GOOGLE_APPLICATION_CREDENTIALS=' . $this->settingServiceAccountPath . 'service-account.json';
+			putenv($this->settingServiceAccountPath);
+			mooSignature::googleClientConnect();
+		}
+		if (file_exists($this->settingSignaturePath . 'defaultSig.html')) {
+		$this->settingEmailTemplate = file_get_contents($this->settingSignaturePath . 'defaultSig.html');
+		}
     }
 
+// Core Google API Client functions
+
 	public function googleClientConnect() {
-		$client = new \Google_Client();
-		$client->useApplicationDefaultCredentials();
-		$client->setScopes(array('https://www.googleapis.com/auth/admin.directory.user', 'https://www.googleapis.com/auth/admin.directory.user.alias', 'https://www.googleapis.com/auth/admin.directory.userschema','https://www.googleapis.com/auth/gmail.settings.basic','https://www.googleapis.com/auth/gmail.settings.sharing'));
-	
-		return $client;
+		if ($this->settingServiceAccountPath) {
+			putenv($this->settingServiceAccountPath);
+			$this->googleClient = new \Google_Client();
+			$this->googleClient->useApplicationDefaultCredentials();
+			$this->googleClient->setScopes(array('https://www.googleapis.com/auth/admin.directory.user', 'https://www.googleapis.com/auth/admin.directory.user.alias', 'https://www.googleapis.com/auth/admin.directory.userschema','https://www.googleapis.com/auth/gmail.settings.basic','https://www.googleapis.com/auth/gmail.settings.sharing'));
+			$this->googleServiceDirectory = new \Google_Service_Directory($this->googleClient);
+	        $this->googleServiceGmail = new \Google_Service_Gmail($this->googleClient);
+	        $this->googleServiceGmailSendAs = new \Google_Service_Gmail_SendAs();
+		} else {
+			echo "Must set the full path to service-account.json file - Cannot find file $this->settingServiceAccountPath";
+		}
+		return $this;
 	}
 
 	public function getUsersList(){
@@ -107,6 +127,8 @@ class mooSignature {
 		return $this;
 	}
 
+// Core user based actions
+
 	public function setSignatureMOTD() {
 
 		if ($this->settingUsersArrayGsuite == False) {
@@ -141,6 +163,40 @@ class mooSignature {
 		mooSignature::setSignatureMOTD();
 		return $this;
 	}
+
+	public function updateSignatures() {
+		if ($this->settingUsersArrayGsuite == False) {
+			mooSignature::functionProcessUsers();
+		} else {
+		mooSignature::getUsersList();
+		foreach ($this->user_array as $key => $value) {
+			mooSignature::functionStripUserAttributes($this->user_array[$key]);
+			mooSignature::functionProcessUsers();
+			}
+		}
+
+		return $this;
+	}
+
+	public function listMergeFields() {
+
+		if ($this->settingUsersArrayGsuite == True) {
+			$this->user_email = $this->admin_email;
+			mooSignature::getUser();
+			mooSignature::functionStripUserAttributes($this->user_array);
+			$source = "First user from $this->domain";
+		} else {
+			$source = "First user from local JSON/Array";
+		}
+		echo "<p><strong>$source</strong></p>";
+		echo "<table><tr><th style=\"border: 1px solid;\">Merge Tag</th><th style=\"border: 1px solid;\">Example</th></tr>";
+		foreach ($this->user_info[0] as $key => $value) {
+			echo "<tr><td style=\"border: 1px solid;\">{{" . $key . "}}</td><td style=\"border: 1px solid;\">$value</td></tr>";
+		}
+		echo "</table>";
+	}
+
+//Manipulate data functions
 
 	public function functionMOTDupdate() {
 		mooSignature::getUserSignature();
@@ -269,20 +325,6 @@ class mooSignature {
 		return $this;
 	}
 
-	public function updateSignatures() {
-		if ($this->settingUsersArrayGsuite == False) {
-			mooSignature::functionProcessUsers();
-		} else {
-		mooSignature::getUsersList();
-		foreach ($this->user_array as $key => $value) {
-			mooSignature::functionStripUserAttributes($this->user_array[$key]);
-			mooSignature::functionProcessUsers();
-			}
-		}
-
-		return $this;
-	}
-
 	public function generateTemplate($user_info) {
 		
 		// $user_phone_1 = str_replace("-", " ", $user_phone_2);
@@ -303,23 +345,7 @@ class mooSignature {
 		return $this;
 	}
 
-	public function listMergeFields() {
-
-		if ($this->settingUsersArrayGsuite == True) {
-			$this->user_email = $this->admin_email;
-			mooSignature::getUser();
-			mooSignature::functionStripUserAttributes($this->user_array);
-			$source = "First user from $this->domain";
-		} else {
-			$source = "First user from local JSON/Array";
-		}
-		echo "<p><strong>$source</strong></p>";
-		echo "<table><tr><th style=\"border: 1px solid;\">Merge Tag</th><th style=\"border: 1px solid;\">Example</th></tr>";
-		foreach ($this->user_info[0] as $key => $value) {
-			echo "<tr><td style=\"border: 1px solid;\">{{" . $key . "}}</td><td style=\"border: 1px solid;\">$value</td></tr>";
-		}
-		echo "</table>";
-	}
+// Settings functions
 
 	public function addSettingStripBlanks($value) {
 		// Remove empty fields from template
@@ -350,14 +376,14 @@ class mooSignature {
 
 	public function addSettingSetTemplate($value) {
 		// Set a new template located in the "signatures" directory
-		$this->settingEmailTemplate = file_get_contents( __DIR__ . '/../signatures/' . $value);
+		$this->settingEmailTemplate = file_get_contents( $this->settingSignaturePath . $value);
 
 		return $this;
 	}
 
 	public function addSettingUsersFile($value) {
 		// Get list of users and details from JSON file rather than GSuite directory
-		$json = json_decode(file_get_contents( __DIR__ . '/../local_vars/' . $value), true);
+		$json = json_decode(file_get_contents( $this->settingJSONPath . $value), true);
 			if (json_last_error() === 0) {
 				if (array_key_exists("primaryEmail", $json[0]) && array_key_exists("alias", $json[0])) {
     				$this->settingUsersArrayGsuite = False;
@@ -428,6 +454,7 @@ class mooSignature {
 
 		return $this;
 	}
+
 	public function addSettingUnsetFilters() {
 		unset($this->settingEmailFilter);
 		unset($this->settingSkipConditions);
@@ -437,16 +464,34 @@ class mooSignature {
 		return $this;
 	}
 
+	public function addSettingServiceAccountPath($value) {
+		if (strpos($value, 'service-account.json') == True) {
+		    $this->settingServiceAccountPath = 'GOOGLE_APPLICATION_CREDENTIALS='. $value;
+		} else {
+			$this->settingServiceAccountPath = 'GOOGLE_APPLICATION_CREDENTIALS='. $value . 'service-account.json';
+		}
+		mooSignature::googleClientConnect();
 
+		return $this;
+	}
+
+	public function addSettingJSONPath($value) {
+		$this->settingJSONPath = $value;
+
+		return $this;	
+	}
+
+	public function addsettingSignaturePath($value) {
+		$this->settingSignaturePath = $value;
+
+		return $this;	
+	}
 
 }
 
 class genericActions {
 
 	public function checkFilePermissions() {
-		if (!file_exists(__DIR__ . "/../local_vars/config.json")) {
-	    echo 'Missing file config.json - This file is required to do server to server authentication. Make sure you have MOVED or RENAMED this file and have it in the correct location<br>';
-		}
 		if (!file_exists(__DIR__ . '/../local_vars/service-account.json')) {
 	    echo 'Missing file service-account.json - This file is required to do server to server authentication. Make sure you have MOVED or RENAMED this file and have it in the correct location<br>';
 		}
