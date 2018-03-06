@@ -1,5 +1,5 @@
 
-[![Github All Releases](https://img.shields.io/github/downloads/moometric/GSuiteSignatureManager/total.svg?maxAge=3600)](https://github.com/moometric/GSuiteSignatureManager) [![Version](http://img.shields.io/packagist/v/moometric/GSuite.svg?style=flat&maxAge=3600)](https://packagist.org/packages/moometric/GSuite) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Packagist](https://img.shields.io/packagist/dt/moometric/gsuite.svg)](https://github.com/moometric/GSuiteSignatureManager/?maxAge=3600) [![Version](http://img.shields.io/packagist/v/moometric/GSuite.svg?style=flat&maxAge=3600)](https://packagist.org/packages/moometric/GSuite) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 
 # GSuite Signature Manager (PHP)
@@ -57,6 +57,10 @@ require_once '/path/to/your-project/vendor/autoload.php';
 ```php
 use Moometric\mooSignature;
 $mooSig = new mooSignature("primaryDomain.com", "adminEmail@primaryDomain.com");
+// Optionally set the path where your default service-account.json file is stored.
+$mooSig->addSettingServiceAccountPath("/your/project/path/local_vars/");
+// Optionally set the path where your signatures are stored.
+$mooSig->addsettingSignaturePath("/your/project/path/signatures/");
 ```
 
 ### Testing
@@ -64,6 +68,10 @@ $mooSig = new mooSignature("primaryDomain.com", "adminEmail@primaryDomain.com");
 Included is an **index.php** file which contains a few tests to get started.
 
 Once you go live, ensure that you switch off testing mode.
+
+```php
+$mooSig->addSettingRunTestMode(False);
+```
 
 ## Usage Examples
 
@@ -177,6 +185,27 @@ $mooSig->listMergeFields();
 
 
 ## Settings
+
+### **Path Settings**
+If your signature, service-account.json or user defined JSON file aren't stored in the default directories, you can use the following to set the path where your files are located.
+
+#### Set the service-account.json path *(Default - /local-vars/)*
+Set the directory where your *service-account.json* file is stored
+```php
+$mooSig->addSettingServiceAccountPath("/your/project/path/local_vars/");
+```
+
+#### Set the signatures path *(Default - /signatures/)*
+Set the directory where your signatures are stored
+```php
+$mooSig->addsettingSignaturePath("/your/project/path/signatures/");
+```
+
+#### Set the users file path *(Default - /local-vars/)*
+Set the directory where your users json files are stored. This is only required if you are fetching your users from a local JSON file, rather than the GSuite directory.
+```php
+$mooSig->addSettingJSONPath("/your/project/path/local_vars/");
+```
 
 ### **Basic Settings**
 
