@@ -5,8 +5,14 @@ use Moometric\mooSignature;
 // Update with your GSuite domain and admin email address
 $admin_email = "admin@domain.com";
 $domain = "domain.com";
+$sigPath ="/your/project/path/signatures/";
+$serviceAccountPath = "/your/project/path/local_vars/";
 
 $mooSig = new mooSignature($domain, $admin_email);
+
+// OPTIONAL - Setting the service account path and signature path if not using default location
+//$mooSig->addSettingServiceAccountPath($serviceAccountPath);
+//$mooSig->addsettingSignaturePath($sigPath);
 
 // Setting test and preview mode so no changes are written
 $mooSig->addSettingRunTestMode(True);
