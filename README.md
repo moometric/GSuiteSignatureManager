@@ -9,6 +9,8 @@ Ensure that all your users have a standard signature by updating them using the 
 
 - **defaultSig.html** template is included, you can add your own templates to the "signatures" directory.
 - **testUsers.json** JSON file is included as an example when fetching users from local source rather than GSuite domain.
+- Fetch users direct from GSuite directory including all attributes (Full name, phone number, profile photo, etc...).
+- Support for auto fetching and mapping of GSuite directory custom attributes to merge tags for use in email signatures.
 
 ## Getting Started
 
