@@ -37,8 +37,8 @@ class Google_Service_ServiceUser_Resource_ProjectsServices extends Google_Servic
    * The Service User implementation accepts the following forms for consumer: -
    * "project:"
    *
-   * A valid path would be: - /v1/projects/my-
-   * project/services/servicemanagement.googleapis.com:disable
+   * A valid path would be: - projects/my-
+   * project/services/servicemanagement.googleapis.com
    * @param Google_Service_ServiceUser_DisableServiceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_ServiceUser_Operation
@@ -58,8 +58,8 @@ class Google_Service_ServiceUser_Resource_ProjectsServices extends Google_Servic
    * @param string $name Name of the consumer and the service to enable for that
    * consumer.
    *
-   * A valid path would be: - /v1/projects/my-
-   * project/services/servicemanagement.googleapis.com:enable
+   * A valid path would be: - projects/my-
+   * project/services/servicemanagement.googleapis.com
    * @param Google_Service_ServiceUser_EnableServiceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_ServiceUser_Operation

@@ -22,6 +22,8 @@ class Google_Service_ShoppingContent_AccountsCustomBatchRequestEntry extends Goo
   public $accountId;
   public $batchId;
   public $force;
+  protected $linkRequestType = 'Google_Service_ShoppingContent_AccountsCustomBatchRequestEntryLinkRequest';
+  protected $linkRequestDataType = '';
   public $merchantId;
   public $method;
   public $overwrite;
@@ -63,6 +65,20 @@ class Google_Service_ShoppingContent_AccountsCustomBatchRequestEntry extends Goo
   public function getForce()
   {
     return $this->force;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_AccountsCustomBatchRequestEntryLinkRequest
+   */
+  public function setLinkRequest(Google_Service_ShoppingContent_AccountsCustomBatchRequestEntryLinkRequest $linkRequest)
+  {
+    $this->linkRequest = $linkRequest;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_AccountsCustomBatchRequestEntryLinkRequest
+   */
+  public function getLinkRequest()
+  {
+    return $this->linkRequest;
   }
   public function setMerchantId($merchantId)
   {

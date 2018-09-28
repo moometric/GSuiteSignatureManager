@@ -64,7 +64,8 @@ class Google_Service_Directory_Resource_Groups extends Google_Service_Resource
     return $this->call('insert', array($params), "Google_Service_Directory_Group");
   }
   /**
-   * Retrieve all groups in a domain (paginated) (groups.listGroups)
+   * Retrieve all groups of a domain or of a user given a userKey (paginated)
+   * (groups.listGroups)
    *
    * @param array $optParams Optional parameters.
    *
@@ -75,9 +76,15 @@ class Google_Service_Directory_Resource_Groups extends Google_Service_Resource
    * from only this domain. To return all groups in a multi-domain fill customer
    * field instead.
    * @opt_param int maxResults Maximum number of results to return. Default is 200
+   * @opt_param string orderBy Column to use for sorting results
    * @opt_param string pageToken Token to specify next page in the list
-   * @opt_param string userKey Email or immutable ID of the user if only those
-   * groups are to be listed, the given user is a member of. If ID, it should
+   * @opt_param string query Query string search. Should be of the form "".
+   * Complete documentation is at https://developers.google.com/admin-
+   * sdk/directory/v1/guides/search-groups
+   * @opt_param string sortOrder Whether to return results in ascending or
+   * descending order. Only of use when orderBy is also used
+   * @opt_param string userKey Email or immutable Id of the user if only those
+   * groups are to be listed, the given user is a member of. If Id, it should
    * match with id of user object
    * @return Google_Service_Directory_Groups
    */

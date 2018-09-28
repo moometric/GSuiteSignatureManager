@@ -18,7 +18,6 @@
 class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Collection
 {
   protected $collection_key = 'topHeadlines';
-  public $accountId;
   public $audience;
   public $buyerPitchStatement;
   public $directContact;
@@ -44,14 +43,6 @@ class Google_Service_AdExchangeBuyer_PublisherProfileApiProto extends Google_Col
   public $state;
   public $topHeadlines;
 
-  public function setAccountId($accountId)
-  {
-    $this->accountId = $accountId;
-  }
-  public function getAccountId()
-  {
-    return $this->accountId;
-  }
   public function setAudience($audience)
   {
     $this->audience = $audience;

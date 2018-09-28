@@ -22,6 +22,8 @@ class Google_Service_ServiceConsumerManagement_MetricDescriptor extends Google_C
   public $displayName;
   protected $labelsType = 'Google_Service_ServiceConsumerManagement_LabelDescriptor';
   protected $labelsDataType = 'array';
+  protected $metadataType = 'Google_Service_ServiceConsumerManagement_MetricDescriptorMetadata';
+  protected $metadataDataType = '';
   public $metricKind;
   public $name;
   public $type;
@@ -57,6 +59,20 @@ class Google_Service_ServiceConsumerManagement_MetricDescriptor extends Google_C
   public function getLabels()
   {
     return $this->labels;
+  }
+  /**
+   * @param Google_Service_ServiceConsumerManagement_MetricDescriptorMetadata
+   */
+  public function setMetadata(Google_Service_ServiceConsumerManagement_MetricDescriptorMetadata $metadata)
+  {
+    $this->metadata = $metadata;
+  }
+  /**
+   * @return Google_Service_ServiceConsumerManagement_MetricDescriptorMetadata
+   */
+  public function getMetadata()
+  {
+    return $this->metadata;
   }
   public function setMetricKind($metricKind)
   {

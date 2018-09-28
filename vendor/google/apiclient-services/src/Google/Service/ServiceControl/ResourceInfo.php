@@ -18,6 +18,7 @@
 class Google_Service_ServiceControl_ResourceInfo extends Google_Model
 {
   public $resourceContainer;
+  public $resourceLocation;
   public $resourceName;
 
   public function setResourceContainer($resourceContainer)
@@ -27,6 +28,14 @@ class Google_Service_ServiceControl_ResourceInfo extends Google_Model
   public function getResourceContainer()
   {
     return $this->resourceContainer;
+  }
+  public function setResourceLocation($resourceLocation)
+  {
+    $this->resourceLocation = $resourceLocation;
+  }
+  public function getResourceLocation()
+  {
+    return $this->resourceLocation;
   }
   public function setResourceName($resourceName)
   {

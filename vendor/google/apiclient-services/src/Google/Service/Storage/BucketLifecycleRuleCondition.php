@@ -21,6 +21,7 @@ class Google_Service_Storage_BucketLifecycleRuleCondition extends Google_Collect
   public $age;
   public $createdBefore;
   public $isLive;
+  public $matchesPattern;
   public $matchesStorageClass;
   public $numNewerVersions;
 
@@ -47,6 +48,14 @@ class Google_Service_Storage_BucketLifecycleRuleCondition extends Google_Collect
   public function getIsLive()
   {
     return $this->isLive;
+  }
+  public function setMatchesPattern($matchesPattern)
+  {
+    $this->matchesPattern = $matchesPattern;
+  }
+  public function getMatchesPattern()
+  {
+    return $this->matchesPattern;
   }
   public function setMatchesStorageClass($matchesStorageClass)
   {

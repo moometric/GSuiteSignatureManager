@@ -34,6 +34,7 @@ class Google_Service_ServiceConsumerManagement_HttpRule extends Google_Collectio
   public $patch;
   public $post;
   public $put;
+  public $responseBody;
   public $restCollection;
   public $restMethodName;
   public $selector;
@@ -155,6 +156,14 @@ class Google_Service_ServiceConsumerManagement_HttpRule extends Google_Collectio
   public function getPut()
   {
     return $this->put;
+  }
+  public function setResponseBody($responseBody)
+  {
+    $this->responseBody = $responseBody;
+  }
+  public function getResponseBody()
+  {
+    return $this->responseBody;
   }
   public function setRestCollection($restCollection)
   {

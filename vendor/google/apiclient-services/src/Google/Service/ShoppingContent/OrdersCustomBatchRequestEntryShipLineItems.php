@@ -21,6 +21,7 @@ class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryShipLineItems 
   public $carrier;
   protected $lineItemsType = 'Google_Service_ShoppingContent_OrderShipmentLineItemShipment';
   protected $lineItemsDataType = 'array';
+  public $shipmentGroupId;
   public $shipmentId;
   protected $shipmentInfosType = 'Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo';
   protected $shipmentInfosDataType = 'array';
@@ -47,6 +48,14 @@ class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryShipLineItems 
   public function getLineItems()
   {
     return $this->lineItems;
+  }
+  public function setShipmentGroupId($shipmentGroupId)
+  {
+    $this->shipmentGroupId = $shipmentGroupId;
+  }
+  public function getShipmentGroupId()
+  {
+    return $this->shipmentGroupId;
   }
   public function setShipmentId($shipmentId)
   {

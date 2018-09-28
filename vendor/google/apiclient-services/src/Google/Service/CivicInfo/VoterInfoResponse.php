@@ -35,6 +35,8 @@ class Google_Service_CivicInfo_VoterInfoResponse extends Google_Collection
   protected $pollingLocationsType = 'Google_Service_CivicInfo_PollingLocation';
   protected $pollingLocationsDataType = 'array';
   public $precinctId;
+  protected $segmentsType = 'Google_Service_CivicInfo_StreetSegment';
+  protected $segmentsDataType = 'array';
   protected $stateType = 'Google_Service_CivicInfo_AdministrationRegion';
   protected $stateDataType = 'array';
 
@@ -159,6 +161,20 @@ class Google_Service_CivicInfo_VoterInfoResponse extends Google_Collection
   public function getPrecinctId()
   {
     return $this->precinctId;
+  }
+  /**
+   * @param Google_Service_CivicInfo_StreetSegment
+   */
+  public function setSegments($segments)
+  {
+    $this->segments = $segments;
+  }
+  /**
+   * @return Google_Service_CivicInfo_StreetSegment
+   */
+  public function getSegments()
+  {
+    return $this->segments;
   }
   /**
    * @param Google_Service_CivicInfo_AdministrationRegion

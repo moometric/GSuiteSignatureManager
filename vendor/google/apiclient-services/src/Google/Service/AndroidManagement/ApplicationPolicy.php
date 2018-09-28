@@ -20,6 +20,7 @@ class Google_Service_AndroidManagement_ApplicationPolicy extends Google_Collecti
   protected $collection_key = 'permissionGrants';
   public $defaultPermissionPolicy;
   public $delegatedScopes;
+  public $disabled;
   public $installType;
   public $lockTaskAllowed;
   public $managedConfiguration;
@@ -43,6 +44,14 @@ class Google_Service_AndroidManagement_ApplicationPolicy extends Google_Collecti
   public function getDelegatedScopes()
   {
     return $this->delegatedScopes;
+  }
+  public function setDisabled($disabled)
+  {
+    $this->disabled = $disabled;
+  }
+  public function getDisabled()
+  {
+    return $this->disabled;
   }
   public function setInstallType($installType)
   {

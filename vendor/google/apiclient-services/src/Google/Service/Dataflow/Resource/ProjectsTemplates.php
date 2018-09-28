@@ -68,12 +68,12 @@ class Google_Service_Dataflow_Resource_ProjectsTemplates extends Google_Service_
    * @param Google_Service_Dataflow_LaunchTemplateParameters $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string gcsPath Required. A Cloud Storage path to the template from
-   * which to create the job. Must be valid Cloud Storage URL, beginning with
-   * 'gs://'.
    * @opt_param string location The location to which to direct the request.
    * @opt_param bool validateOnly If true, the request is validated but not
    * actually executed. Defaults to false.
+   * @opt_param string gcsPath Required. A Cloud Storage path to the template from
+   * which to create the job. Must be valid Cloud Storage URL, beginning with
+   * 'gs://'.
    * @return Google_Service_Dataflow_LaunchTemplateResponse
    */
   public function launch($projectId, Google_Service_Dataflow_LaunchTemplateParameters $postBody, $optParams = array())

@@ -26,9 +26,9 @@
 class Google_Service_Customsearch_Resource_CseSiterestrict extends Google_Service_Resource
 {
   /**
-   * (Closed Beta API) Returns metadata about the search performed, metadata about
-   * the custom search engine used for the search, and the search results only for
-   * site-restrict cses. (siterestrict.listCseSiterestrict)
+   * Returns metadata about the search performed, metadata about the custom search
+   * engine used for the search, and the search results. Uses a small set of url
+   * patterns. (siterestrict.listCseSiterestrict)
    *
    * @param string $q Query
    * @param array $optParams Optional parameters.
@@ -56,7 +56,8 @@ class Google_Service_Customsearch_Resource_CseSiterestrict extends Google_Servic
    * @opt_param string imgColorType Returns black and white, grayscale, or color
    * images: mono, gray, and color.
    * @opt_param string imgDominantColor Returns images of a specific dominant
-   * color: yellow, green, teal, blue, purple, pink, white, gray, black and brown.
+   * color: red, orange, yellow, green, teal, blue, purple, pink, white, gray,
+   * black and brown.
    * @opt_param string imgSize Returns images of a specified size, where size can
    * be one of: icon, small, medium, large, xlarge, xxlarge, and huge.
    * @opt_param string imgType Returns images of a type, which can be one of:

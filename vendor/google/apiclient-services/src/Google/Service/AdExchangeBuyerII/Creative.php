@@ -29,6 +29,7 @@ class Google_Service_AdExchangeBuyerII_Creative extends Google_Collection
   protected $correctionsDataType = 'array';
   public $creativeId;
   public $dealsStatus;
+  public $declaredClickThroughUrls;
   public $detectedAdvertiserIds;
   public $detectedDomains;
   public $detectedLanguages;
@@ -135,6 +136,14 @@ class Google_Service_AdExchangeBuyerII_Creative extends Google_Collection
   public function getDealsStatus()
   {
     return $this->dealsStatus;
+  }
+  public function setDeclaredClickThroughUrls($declaredClickThroughUrls)
+  {
+    $this->declaredClickThroughUrls = $declaredClickThroughUrls;
+  }
+  public function getDeclaredClickThroughUrls()
+  {
+    return $this->declaredClickThroughUrls;
   }
   public function setDetectedAdvertiserIds($detectedAdvertiserIds)
   {

@@ -16,10 +16,11 @@
  */
 
 /**
- * Service definition for Firestore (v1beta1).
+ * Service definition for Firestore (v1).
  *
  * <p>
-</p>
+ * Accesses the NoSQL document database built for automatic scaling, high
+ * performance, and ease of application development.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -37,8 +38,8 @@ class Google_Service_Firestore extends Google_Service
   const DATASTORE =
       "https://www.googleapis.com/auth/datastore";
 
-  public $projects_databases_documents;
-  public $projects_databases_indexes;
+  public $projects_databases_operations;
+  public $projects_locations;
   
   /**
    * Constructs the internal representation of the Firestore service.
@@ -50,71 +51,27 @@ class Google_Service_Firestore extends Google_Service
     parent::__construct($client);
     $this->rootUrl = 'https://firestore.googleapis.com/';
     $this->servicePath = '';
-    $this->version = 'v1beta1';
+    $this->version = 'v1';
     $this->serviceName = 'firestore';
 
-    $this->projects_databases_documents = new Google_Service_Firestore_Resource_ProjectsDatabasesDocuments(
+    $this->projects_databases_operations = new Google_Service_Firestore_Resource_ProjectsDatabasesOperations(
         $this,
         $this->serviceName,
-        'documents',
+        'operations',
         array(
           'methods' => array(
-            'batchGet' => array(
-              'path' => 'v1beta1/{+database}/documents:batchGet',
+            'cancel' => array(
+              'path' => 'v1/{+name}:cancel',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'database' => array(
+                'name' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
-              ),
-            ),'beginTransaction' => array(
-              'path' => 'v1beta1/{+database}/documents:beginTransaction',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'database' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'commit' => array(
-              'path' => 'v1beta1/{+database}/documents:commit',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'database' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'createDocument' => array(
-              'path' => 'v1beta1/{+parent}/{collectionId}',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'collectionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'documentId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'mask.fieldPaths' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
                 ),
               ),
             ),'delete' => array(
-              'path' => 'v1beta1/{+name}',
+              'path' => 'v1/{+name}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'name' => array(
@@ -122,17 +79,9 @@ class Google_Service_Firestore extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'currentDocument.updateTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'currentDocument.exists' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
               ),
             ),'get' => array(
-              'path' => 'v1beta1/{+name}',
+              'path' => 'v1/{+name}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'name' => array(
@@ -140,42 +89,15 @@ class Google_Service_Firestore extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'mask.fieldPaths' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'readTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'transaction' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
               ),
             ),'list' => array(
-              'path' => 'v1beta1/{+parent}/{collectionId}',
+              'path' => 'v1/{+name}/operations',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'parent' => array(
+                'name' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ),
-                'collectionId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'showMissing' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'mask.fieldPaths' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
                 ),
                 'pageToken' => array(
                   'location' => 'query',
@@ -185,129 +107,23 @@ class Google_Service_Firestore extends Google_Service
                   'location' => 'query',
                   'type' => 'integer',
                 ),
-                'transaction' => array(
+                'filter' => array(
                   'location' => 'query',
                   'type' => 'string',
-                ),
-                'orderBy' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'readTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'listCollectionIds' => array(
-              'path' => 'v1beta1/{+parent}:listCollectionIds',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'listen' => array(
-              'path' => 'v1beta1/{+database}/documents:listen',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'database' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'patch' => array(
-              'path' => 'v1beta1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'currentDocument.exists' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
-                'updateMask.fieldPaths' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'mask.fieldPaths' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
-                'currentDocument.updateTime' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'rollback' => array(
-              'path' => 'v1beta1/{+database}/documents:rollback',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'database' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'runQuery' => array(
-              'path' => 'v1beta1/{+parent}:runQuery',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'write' => array(
-              'path' => 'v1beta1/{+database}/documents:write',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'database' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
                 ),
               ),
             ),
           )
         )
     );
-    $this->projects_databases_indexes = new Google_Service_Firestore_Resource_ProjectsDatabasesIndexes(
+    $this->projects_locations = new Google_Service_Firestore_Resource_ProjectsLocations(
         $this,
         $this->serviceName,
-        'indexes',
+        'locations',
         array(
           'methods' => array(
-            'create' => array(
-              'path' => 'v1beta1/{+parent}/indexes',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'delete' => array(
-              'path' => 'v1beta1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'v1beta1/{+name}',
+            'get' => array(
+              'path' => 'v1/{+name}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'name' => array(
@@ -317,10 +133,10 @@ class Google_Service_Firestore extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'v1beta1/{+parent}/indexes',
+              'path' => 'v1/{+name}/locations',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'parent' => array(
+                'name' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

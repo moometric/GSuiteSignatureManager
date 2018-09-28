@@ -26,6 +26,7 @@ class Google_Service_Compute_Firewall extends Google_Collection
   public $description;
   public $destinationRanges;
   public $direction;
+  public $disabled;
   public $id;
   public $kind;
   public $name;
@@ -97,6 +98,14 @@ class Google_Service_Compute_Firewall extends Google_Collection
   public function getDirection()
   {
     return $this->direction;
+  }
+  public function setDisabled($disabled)
+  {
+    $this->disabled = $disabled;
+  }
+  public function getDisabled()
+  {
+    return $this->disabled;
   }
   public function setId($id)
   {

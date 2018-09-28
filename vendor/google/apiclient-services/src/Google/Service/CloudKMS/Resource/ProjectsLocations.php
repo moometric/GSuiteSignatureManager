@@ -26,7 +26,7 @@
 class Google_Service_CloudKMS_Resource_ProjectsLocations extends Google_Service_Resource
 {
   /**
-   * Get information about a location. (locations.get)
+   * Gets information about a location. (locations.get)
    *
    * @param string $name Resource name for the location.
    * @param array $optParams Optional parameters.

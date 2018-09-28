@@ -32,11 +32,11 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypes extends Google
    *
    * @param string $parent Required. The name of the agent to delete all entities
    * types for. Format: `projects//agent`.
-   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchDeleteEntityTypesRequest $postBody
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchDeleteEntityTypesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleLongrunningOperation
    */
-  public function batchDelete($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchDeleteEntityTypesRequest $postBody, $optParams = array())
+  public function batchDelete($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchDeleteEntityTypesRequest $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -49,11 +49,11 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypes extends Google
    *
    * @param string $parent Required. The name of the agent to update or create
    * entity types in. Format: `projects//agent`.
-   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchUpdateEntityTypesRequest $postBody
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchUpdateEntityTypesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleLongrunningOperation
    */
-  public function batchUpdate($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchUpdateEntityTypesRequest $postBody, $optParams = array())
+  public function batchUpdate($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchUpdateEntityTypesRequest $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -64,7 +64,7 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypes extends Google
    *
    * @param string $parent Required. The agent to create a entity type for.
    * Format: `projects//agent`.
-   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType $postBody
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string languageCode Optional. The language of entity synonyms
@@ -72,13 +72,13 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypes extends Google
    * used. [More than a dozen
    * languages](https://dialogflow.com/docs/reference/language) are supported.
    * Note: languages must be enabled in the agent, before they can be used.
-   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType
    */
-  public function create($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType $postBody, $optParams = array())
+  public function create($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('create', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType");
+    return $this->call('create', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType");
   }
   /**
    * Deletes the specified entity type. (entityTypes.delete)
@@ -106,13 +106,13 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypes extends Google
    * than a dozen languages](https://dialogflow.com/docs/reference/language) are
    * supported. Note: languages must be enabled in the agent, before they can be
    * used.
-   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType
    */
   public function get($name, $optParams = array())
   {
     $params = array('name' => $name);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType");
+    return $this->call('get', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType");
   }
   /**
    * Returns the list of all entity types in the specified agent.
@@ -131,13 +131,13 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypes extends Google
    * dozen languages](https://dialogflow.com/docs/reference/language) are
    * supported. Note: languages must be enabled in the agent, before they can be
    * used.
-   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1ListEntityTypesResponse
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2ListEntityTypesResponse
    */
   public function listProjectsAgentEntityTypes($parent, $optParams = array())
   {
     $params = array('parent' => $parent);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1ListEntityTypesResponse");
+    return $this->call('list', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2ListEntityTypesResponse");
   }
   /**
    * Updates the specified entity type. (entityTypes.patch)
@@ -145,7 +145,7 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypes extends Google
    * @param string $name Required for all methods except `create` (`create`
    * populates the name automatically. The unique identifier of the entity type.
    * Format: `projects//agent/entityTypes/`.
-   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType $postBody
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string languageCode Optional. The language of entity synonyms
@@ -155,12 +155,12 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypes extends Google
    * Note: languages must be enabled in the agent, before they can be used.
    * @opt_param string updateMask Optional. The mask to control which fields get
    * updated.
-   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType
    */
-  public function patch($name, Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType $postBody, $optParams = array())
+  public function patch($name, Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType $postBody, $optParams = array())
   {
     $params = array('name' => $name, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EntityType");
+    return $this->call('patch', array($params), "Google_Service_Dialogflow_GoogleCloudDialogflowV2EntityType");
   }
 }

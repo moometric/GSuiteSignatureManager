@@ -18,6 +18,7 @@
 class Google_Service_AndroidProvisioningPartner_DeviceClaim extends Google_Model
 {
   public $ownerCompanyId;
+  public $resellerId;
   public $sectionType;
 
   public function setOwnerCompanyId($ownerCompanyId)
@@ -27,6 +28,14 @@ class Google_Service_AndroidProvisioningPartner_DeviceClaim extends Google_Model
   public function getOwnerCompanyId()
   {
     return $this->ownerCompanyId;
+  }
+  public function setResellerId($resellerId)
+  {
+    $this->resellerId = $resellerId;
+  }
+  public function getResellerId()
+  {
+    return $this->resellerId;
   }
   public function setSectionType($sectionType)
   {

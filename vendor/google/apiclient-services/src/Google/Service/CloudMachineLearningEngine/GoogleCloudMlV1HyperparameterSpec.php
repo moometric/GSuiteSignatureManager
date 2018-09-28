@@ -18,6 +18,7 @@
 class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterSpec extends Google_Collection
 {
   protected $collection_key = 'params';
+  public $algorithm;
   public $enableTrialEarlyStopping;
   public $goal;
   public $hyperparameterMetricTag;
@@ -27,6 +28,14 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1HyperparameterSpe
   protected $paramsDataType = 'array';
   public $resumePreviousJobId;
 
+  public function setAlgorithm($algorithm)
+  {
+    $this->algorithm = $algorithm;
+  }
+  public function getAlgorithm()
+  {
+    return $this->algorithm;
+  }
   public function setEnableTrialEarlyStopping($enableTrialEarlyStopping)
   {
     $this->enableTrialEarlyStopping = $enableTrialEarlyStopping;

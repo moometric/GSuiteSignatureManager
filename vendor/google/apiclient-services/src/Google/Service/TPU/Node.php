@@ -31,6 +31,8 @@ class Google_Service_TPU_Node extends Google_Collection
   protected $networkEndpointsType = 'Google_Service_TPU_NetworkEndpoint';
   protected $networkEndpointsDataType = 'array';
   public $port;
+  protected $schedulingConfigType = 'Google_Service_TPU_SchedulingConfig';
+  protected $schedulingConfigDataType = '';
   public $serviceAccount;
   public $state;
   public $tensorflowVersion;
@@ -136,6 +138,20 @@ class Google_Service_TPU_Node extends Google_Collection
   public function getPort()
   {
     return $this->port;
+  }
+  /**
+   * @param Google_Service_TPU_SchedulingConfig
+   */
+  public function setSchedulingConfig(Google_Service_TPU_SchedulingConfig $schedulingConfig)
+  {
+    $this->schedulingConfig = $schedulingConfig;
+  }
+  /**
+   * @return Google_Service_TPU_SchedulingConfig
+   */
+  public function getSchedulingConfig()
+  {
+    return $this->schedulingConfig;
   }
   public function setServiceAccount($serviceAccount)
   {

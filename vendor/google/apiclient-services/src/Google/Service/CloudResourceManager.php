@@ -16,7 +16,7 @@
  */
 
 /**
- * Service definition for CloudResourceManager (v1).
+ * Service definition for CloudResourceManager (v2).
  *
  * <p>
  * The Google Cloud Resource Manager API provides methods for creating, reading,
@@ -39,10 +39,7 @@ class Google_Service_CloudResourceManager extends Google_Service
       "https://www.googleapis.com/auth/cloud-platform.read-only";
 
   public $folders;
-  public $liens;
   public $operations;
-  public $organizations;
-  public $projects;
   
   /**
    * Constructs the internal representation of the CloudResourceManager service.
@@ -54,7 +51,7 @@ class Google_Service_CloudResourceManager extends Google_Service
     parent::__construct($client);
     $this->rootUrl = 'https://cloudresourcemanager.googleapis.com/';
     $this->servicePath = '';
-    $this->version = 'v1';
+    $this->version = 'v2';
     $this->serviceName = 'cloudresourcemanager';
 
     $this->folders = new Google_Service_CloudResourceManager_Resource_Folders(
@@ -63,82 +60,17 @@ class Google_Service_CloudResourceManager extends Google_Service
         'folders',
         array(
           'methods' => array(
-            'clearOrgPolicy' => array(
-              'path' => 'v1/{+resource}:clearOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getEffectiveOrgPolicy' => array(
-              'path' => 'v1/{+resource}:getEffectiveOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getOrgPolicy' => array(
-              'path' => 'v1/{+resource}:getOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'listAvailableOrgPolicyConstraints' => array(
-              'path' => 'v1/{+resource}:listAvailableOrgPolicyConstraints',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'listOrgPolicies' => array(
-              'path' => 'v1/{+resource}:listOrgPolicies',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'setOrgPolicy' => array(
-              'path' => 'v1/{+resource}:setOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->liens = new Google_Service_CloudResourceManager_Resource_Liens(
-        $this,
-        $this->serviceName,
-        'liens',
-        array(
-          'methods' => array(
             'create' => array(
-              'path' => 'v1/liens',
+              'path' => 'v2/folders',
               'httpMethod' => 'POST',
-              'parameters' => array(),
+              'parameters' => array(
+                'parent' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
             ),'delete' => array(
-              'path' => 'v1/{+name}',
+              'path' => 'v2/{+name}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'name' => array(
@@ -147,10 +79,34 @@ class Google_Service_CloudResourceManager extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'list' => array(
-              'path' => 'v1/liens',
+            ),'get' => array(
+              'path' => 'v2/{+name}',
               'httpMethod' => 'GET',
               'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'getIamPolicy' => array(
+              'path' => 'v2/{+resource}:getIamPolicy',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'resource' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'list' => array(
+              'path' => 'v2/folders',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
@@ -159,9 +115,67 @@ class Google_Service_CloudResourceManager extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'pageToken' => array(
+                'showDeleted' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
+              ),
+            ),'move' => array(
+              'path' => 'v2/{+name}:move',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'patch' => array(
+              'path' => 'v2/{+name}',
+              'httpMethod' => 'PATCH',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'updateMask' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+              ),
+            ),'search' => array(
+              'path' => 'v2/folders:search',
+              'httpMethod' => 'POST',
+              'parameters' => array(),
+            ),'setIamPolicy' => array(
+              'path' => 'v2/{+resource}:setIamPolicy',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'resource' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'testIamPermissions' => array(
+              'path' => 'v2/{+resource}:testIamPermissions',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'resource' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'undelete' => array(
+              'path' => 'v2/{+name}:undelete',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
                 ),
               ),
             ),
@@ -179,291 +193,6 @@ class Google_Service_CloudResourceManager extends Google_Service
               'httpMethod' => 'GET',
               'parameters' => array(
                 'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->organizations = new Google_Service_CloudResourceManager_Resource_Organizations(
-        $this,
-        $this->serviceName,
-        'organizations',
-        array(
-          'methods' => array(
-            'clearOrgPolicy' => array(
-              'path' => 'v1/{+resource}:clearOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'name' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getEffectiveOrgPolicy' => array(
-              'path' => 'v1/{+resource}:getEffectiveOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getIamPolicy' => array(
-              'path' => 'v1/{+resource}:getIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getOrgPolicy' => array(
-              'path' => 'v1/{+resource}:getOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'listAvailableOrgPolicyConstraints' => array(
-              'path' => 'v1/{+resource}:listAvailableOrgPolicyConstraints',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'listOrgPolicies' => array(
-              'path' => 'v1/{+resource}:listOrgPolicies',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'search' => array(
-              'path' => 'v1/organizations:search',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'setIamPolicy' => array(
-              'path' => 'v1/{+resource}:setIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'setOrgPolicy' => array(
-              'path' => 'v1/{+resource}:setOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'testIamPermissions' => array(
-              'path' => 'v1/{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->projects = new Google_Service_CloudResourceManager_Resource_Projects(
-        $this,
-        $this->serviceName,
-        'projects',
-        array(
-          'methods' => array(
-            'clearOrgPolicy' => array(
-              'path' => 'v1/{+resource}:clearOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'create' => array(
-              'path' => 'v1/projects',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'delete' => array(
-              'path' => 'v1/projects/{projectId}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'projectId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'get' => array(
-              'path' => 'v1/projects/{projectId}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'projectId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getAncestry' => array(
-              'path' => 'v1/projects/{projectId}:getAncestry',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'projectId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getEffectiveOrgPolicy' => array(
-              'path' => 'v1/{+resource}:getEffectiveOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getIamPolicy' => array(
-              'path' => 'v1/projects/{resource}:getIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'getOrgPolicy' => array(
-              'path' => 'v1/{+resource}:getOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'v1/projects',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'listAvailableOrgPolicyConstraints' => array(
-              'path' => 'v1/{+resource}:listAvailableOrgPolicyConstraints',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'listOrgPolicies' => array(
-              'path' => 'v1/{+resource}:listOrgPolicies',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'setIamPolicy' => array(
-              'path' => 'v1/projects/{resource}:setIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'setOrgPolicy' => array(
-              'path' => 'v1/{+resource}:setOrgPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'testIamPermissions' => array(
-              'path' => 'v1/projects/{resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'resource' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'undelete' => array(
-              'path' => 'v1/projects/{projectId}:undelete',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'projectId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'update' => array(
-              'path' => 'v1/projects/{projectId}',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'projectId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

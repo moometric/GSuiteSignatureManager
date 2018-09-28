@@ -40,6 +40,7 @@ class Google_Service_Compute_BackendService extends Google_Collection
   public $portName;
   public $protocol;
   public $region;
+  public $securityPolicy;
   public $selfLink;
   public $sessionAffinity;
   public $timeoutSec;
@@ -211,6 +212,14 @@ class Google_Service_Compute_BackendService extends Google_Collection
   public function getRegion()
   {
     return $this->region;
+  }
+  public function setSecurityPolicy($securityPolicy)
+  {
+    $this->securityPolicy = $securityPolicy;
+  }
+  public function getSecurityPolicy()
+  {
+    return $this->securityPolicy;
   }
   public function setSelfLink($selfLink)
   {

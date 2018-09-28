@@ -25,6 +25,7 @@ class Google_Service_AndroidManagement_SoftwareInfo extends Google_Model
   public $bootloaderVersion;
   public $deviceBuildSignature;
   public $deviceKernelVersion;
+  public $primaryLanguageCode;
   public $securityPatchLevel;
 
   public function setAndroidBuildNumber($androidBuildNumber)
@@ -90,6 +91,14 @@ class Google_Service_AndroidManagement_SoftwareInfo extends Google_Model
   public function getDeviceKernelVersion()
   {
     return $this->deviceKernelVersion;
+  }
+  public function setPrimaryLanguageCode($primaryLanguageCode)
+  {
+    $this->primaryLanguageCode = $primaryLanguageCode;
+  }
+  public function getPrimaryLanguageCode()
+  {
+    return $this->primaryLanguageCode;
   }
   public function setSecurityPatchLevel($securityPatchLevel)
   {

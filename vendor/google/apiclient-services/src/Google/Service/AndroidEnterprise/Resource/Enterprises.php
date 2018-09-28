@@ -78,21 +78,6 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
     return $this->call('createWebToken', array($params), "Google_Service_AndroidEnterprise_AdministratorWebToken");
   }
   /**
-   * Deletes the binding between the EMM and enterprise. This is now deprecated.
-   * Use this method only to unenroll customers that were previously enrolled with
-   * the insert call, then enroll them again with the enroll call.
-   * (enterprises.delete)
-   *
-   * @param string $enterpriseId The ID of the enterprise.
-   * @param array $optParams Optional parameters.
-   */
-  public function delete($enterpriseId, $optParams = array())
-  {
-    $params = array('enterpriseId' => $enterpriseId);
-    $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params));
-  }
-  /**
    * Enrolls an enterprise with the calling EMM. (enterprises.enroll)
    *
    * @param string $token The token provided by the enterprise to register the
@@ -142,8 +127,7 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
     return $this->call('get', array($params), "Google_Service_AndroidEnterprise_Enterprise");
   }
   /**
-   * Returns the Android Device Policy config resource.
-   * (enterprises.getAndroidDevicePolicyConfig)
+   * Deprecated and unused. (enterprises.getAndroidDevicePolicyConfig)
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param array $optParams Optional parameters.
@@ -198,22 +182,6 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
     $params = array('enterpriseId' => $enterpriseId);
     $params = array_merge($params, $optParams);
     return $this->call('getStoreLayout', array($params), "Google_Service_AndroidEnterprise_StoreLayout");
-  }
-  /**
-   * Establishes the binding between the EMM and an enterprise. This is now
-   * deprecated; use enroll instead. (enterprises.insert)
-   *
-   * @param string $token The token provided by the enterprise to register the
-   * EMM.
-   * @param Google_Service_AndroidEnterprise_Enterprise $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_Enterprise
-   */
-  public function insert($token, Google_Service_AndroidEnterprise_Enterprise $postBody, $optParams = array())
-  {
-    $params = array('token' => $token, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('insert', array($params), "Google_Service_AndroidEnterprise_Enterprise");
   }
   /**
    * Looks up an enterprise by domain name. This is only supported for enterprises
@@ -297,10 +265,7 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
     return $this->call('setAccount', array($params), "Google_Service_AndroidEnterprise_EnterpriseAccount");
   }
   /**
-   * Sets the Android Device Policy config resource. EMM may use this method to
-   * enable or disable Android Device Policy support for the specified enterprise.
-   * To learn more about managing devices and apps with Android Device Policy, see
-   * the Android Management API. (enterprises.setAndroidDevicePolicyConfig)
+   * Deprecated and unused. (enterprises.setAndroidDevicePolicyConfig)
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param Google_Service_AndroidEnterprise_AndroidDevicePolicyConfig $postBody

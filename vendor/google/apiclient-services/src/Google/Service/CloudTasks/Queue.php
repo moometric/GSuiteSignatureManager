@@ -17,11 +17,9 @@
 
 class Google_Service_CloudTasks_Queue extends Google_Model
 {
-  protected $appEngineHttpTargetType = 'Google_Service_CloudTasks_AppEngineHttpTarget';
-  protected $appEngineHttpTargetDataType = '';
+  protected $appEngineHttpQueueType = 'Google_Service_CloudTasks_AppEngineHttpQueue';
+  protected $appEngineHttpQueueDataType = '';
   public $name;
-  protected $pullTargetType = 'Google_Service_CloudTasks_PullTarget';
-  protected $pullTargetDataType = '';
   public $purgeTime;
   protected $rateLimitsType = 'Google_Service_CloudTasks_RateLimits';
   protected $rateLimitsDataType = '';
@@ -30,18 +28,18 @@ class Google_Service_CloudTasks_Queue extends Google_Model
   public $state;
 
   /**
-   * @param Google_Service_CloudTasks_AppEngineHttpTarget
+   * @param Google_Service_CloudTasks_AppEngineHttpQueue
    */
-  public function setAppEngineHttpTarget(Google_Service_CloudTasks_AppEngineHttpTarget $appEngineHttpTarget)
+  public function setAppEngineHttpQueue(Google_Service_CloudTasks_AppEngineHttpQueue $appEngineHttpQueue)
   {
-    $this->appEngineHttpTarget = $appEngineHttpTarget;
+    $this->appEngineHttpQueue = $appEngineHttpQueue;
   }
   /**
-   * @return Google_Service_CloudTasks_AppEngineHttpTarget
+   * @return Google_Service_CloudTasks_AppEngineHttpQueue
    */
-  public function getAppEngineHttpTarget()
+  public function getAppEngineHttpQueue()
   {
-    return $this->appEngineHttpTarget;
+    return $this->appEngineHttpQueue;
   }
   public function setName($name)
   {
@@ -50,20 +48,6 @@ class Google_Service_CloudTasks_Queue extends Google_Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * @param Google_Service_CloudTasks_PullTarget
-   */
-  public function setPullTarget(Google_Service_CloudTasks_PullTarget $pullTarget)
-  {
-    $this->pullTarget = $pullTarget;
-  }
-  /**
-   * @return Google_Service_CloudTasks_PullTarget
-   */
-  public function getPullTarget()
-  {
-    return $this->pullTarget;
   }
   public function setPurgeTime($purgeTime)
   {

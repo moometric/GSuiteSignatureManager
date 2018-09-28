@@ -25,6 +25,7 @@ class Google_Service_FirebaseDynamicLinks_GetIosPostInstallAttributionResponse e
   public $invitationId;
   public $isStrongMatchExecutable;
   public $matchMessage;
+  public $requestIpVersion;
   public $requestedLink;
   public $resolvedLink;
   public $utmCampaign;
@@ -94,6 +95,14 @@ class Google_Service_FirebaseDynamicLinks_GetIosPostInstallAttributionResponse e
   public function getMatchMessage()
   {
     return $this->matchMessage;
+  }
+  public function setRequestIpVersion($requestIpVersion)
+  {
+    $this->requestIpVersion = $requestIpVersion;
+  }
+  public function getRequestIpVersion()
+  {
+    return $this->requestIpVersion;
   }
   public function setRequestedLink($requestedLink)
   {

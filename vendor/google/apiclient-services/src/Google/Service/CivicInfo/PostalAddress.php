@@ -23,14 +23,7 @@ class Google_Service_CivicInfo_PostalAddress extends Google_Collection
   public $countryName;
   public $countryNameCode;
   public $dependentLocalityName;
-  public $dependentThoroughfareLeadingType;
   public $dependentThoroughfareName;
-  public $dependentThoroughfarePostDirection;
-  public $dependentThoroughfarePreDirection;
-  public $dependentThoroughfareTrailingType;
-  public $dependentThoroughfaresConnector;
-  public $dependentThoroughfaresIndicator;
-  public $dependentThoroughfaresType;
   public $firmName;
   public $isDisputed;
   public $languageCode;
@@ -43,12 +36,8 @@ class Google_Service_CivicInfo_PostalAddress extends Google_Collection
   public $sortingCode;
   public $subAdministrativeAreaName;
   public $subPremiseName;
-  public $thoroughfareLeadingType;
   public $thoroughfareName;
   public $thoroughfareNumber;
-  public $thoroughfarePostDirection;
-  public $thoroughfarePreDirection;
-  public $thoroughfareTrailingType;
 
   public function setAddressLines($addressLines)
   {
@@ -90,14 +79,6 @@ class Google_Service_CivicInfo_PostalAddress extends Google_Collection
   {
     return $this->dependentLocalityName;
   }
-  public function setDependentThoroughfareLeadingType($dependentThoroughfareLeadingType)
-  {
-    $this->dependentThoroughfareLeadingType = $dependentThoroughfareLeadingType;
-  }
-  public function getDependentThoroughfareLeadingType()
-  {
-    return $this->dependentThoroughfareLeadingType;
-  }
   public function setDependentThoroughfareName($dependentThoroughfareName)
   {
     $this->dependentThoroughfareName = $dependentThoroughfareName;
@@ -105,54 +86,6 @@ class Google_Service_CivicInfo_PostalAddress extends Google_Collection
   public function getDependentThoroughfareName()
   {
     return $this->dependentThoroughfareName;
-  }
-  public function setDependentThoroughfarePostDirection($dependentThoroughfarePostDirection)
-  {
-    $this->dependentThoroughfarePostDirection = $dependentThoroughfarePostDirection;
-  }
-  public function getDependentThoroughfarePostDirection()
-  {
-    return $this->dependentThoroughfarePostDirection;
-  }
-  public function setDependentThoroughfarePreDirection($dependentThoroughfarePreDirection)
-  {
-    $this->dependentThoroughfarePreDirection = $dependentThoroughfarePreDirection;
-  }
-  public function getDependentThoroughfarePreDirection()
-  {
-    return $this->dependentThoroughfarePreDirection;
-  }
-  public function setDependentThoroughfareTrailingType($dependentThoroughfareTrailingType)
-  {
-    $this->dependentThoroughfareTrailingType = $dependentThoroughfareTrailingType;
-  }
-  public function getDependentThoroughfareTrailingType()
-  {
-    return $this->dependentThoroughfareTrailingType;
-  }
-  public function setDependentThoroughfaresConnector($dependentThoroughfaresConnector)
-  {
-    $this->dependentThoroughfaresConnector = $dependentThoroughfaresConnector;
-  }
-  public function getDependentThoroughfaresConnector()
-  {
-    return $this->dependentThoroughfaresConnector;
-  }
-  public function setDependentThoroughfaresIndicator($dependentThoroughfaresIndicator)
-  {
-    $this->dependentThoroughfaresIndicator = $dependentThoroughfaresIndicator;
-  }
-  public function getDependentThoroughfaresIndicator()
-  {
-    return $this->dependentThoroughfaresIndicator;
-  }
-  public function setDependentThoroughfaresType($dependentThoroughfaresType)
-  {
-    $this->dependentThoroughfaresType = $dependentThoroughfaresType;
-  }
-  public function getDependentThoroughfaresType()
-  {
-    return $this->dependentThoroughfaresType;
   }
   public function setFirmName($firmName)
   {
@@ -250,14 +183,6 @@ class Google_Service_CivicInfo_PostalAddress extends Google_Collection
   {
     return $this->subPremiseName;
   }
-  public function setThoroughfareLeadingType($thoroughfareLeadingType)
-  {
-    $this->thoroughfareLeadingType = $thoroughfareLeadingType;
-  }
-  public function getThoroughfareLeadingType()
-  {
-    return $this->thoroughfareLeadingType;
-  }
   public function setThoroughfareName($thoroughfareName)
   {
     $this->thoroughfareName = $thoroughfareName;
@@ -273,29 +198,5 @@ class Google_Service_CivicInfo_PostalAddress extends Google_Collection
   public function getThoroughfareNumber()
   {
     return $this->thoroughfareNumber;
-  }
-  public function setThoroughfarePostDirection($thoroughfarePostDirection)
-  {
-    $this->thoroughfarePostDirection = $thoroughfarePostDirection;
-  }
-  public function getThoroughfarePostDirection()
-  {
-    return $this->thoroughfarePostDirection;
-  }
-  public function setThoroughfarePreDirection($thoroughfarePreDirection)
-  {
-    $this->thoroughfarePreDirection = $thoroughfarePreDirection;
-  }
-  public function getThoroughfarePreDirection()
-  {
-    return $this->thoroughfarePreDirection;
-  }
-  public function setThoroughfareTrailingType($thoroughfareTrailingType)
-  {
-    $this->thoroughfareTrailingType = $thoroughfareTrailingType;
-  }
-  public function getThoroughfareTrailingType()
-  {
-    return $this->thoroughfareTrailingType;
   }
 }

@@ -234,16 +234,6 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'delete' => array(
-              'path' => 'enterprises/{enterpriseId}',
-              'httpMethod' => 'DELETE',
-              'parameters' => array(
-                'enterpriseId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
             ),'enroll' => array(
               'path' => 'enterprises/enroll',
               'httpMethod' => 'POST',
@@ -303,16 +293,6 @@ class Google_Service_AndroidEnterprise extends Google_Service
               'parameters' => array(
                 'enterpriseId' => array(
                   'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'insert' => array(
-              'path' => 'enterprises',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'token' => array(
-                  'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),

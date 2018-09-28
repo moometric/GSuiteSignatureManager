@@ -21,6 +21,7 @@ class Google_Service_Container_NodeConfig extends Google_Collection
   protected $acceleratorsType = 'Google_Service_Container_AcceleratorConfig';
   protected $acceleratorsDataType = 'array';
   public $diskSizeGb;
+  public $diskType;
   public $imageType;
   public $labels;
   public $localSsdCount;
@@ -53,6 +54,14 @@ class Google_Service_Container_NodeConfig extends Google_Collection
   public function getDiskSizeGb()
   {
     return $this->diskSizeGb;
+  }
+  public function setDiskType($diskType)
+  {
+    $this->diskType = $diskType;
+  }
+  public function getDiskType()
+  {
+    return $this->diskType;
   }
   public function setImageType($imageType)
   {

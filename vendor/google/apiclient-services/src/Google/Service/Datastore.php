@@ -39,6 +39,7 @@ class Google_Service_Datastore extends Google_Service
       "https://www.googleapis.com/auth/datastore";
 
   public $projects;
+  public $projects_indexes;
   public $projects_operations;
   
   /**
@@ -82,6 +83,26 @@ class Google_Service_Datastore extends Google_Service
               ),
             ),'commit' => array(
               'path' => 'v1/projects/{projectId}:commit',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'projectId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'export' => array(
+              'path' => 'v1/projects/{projectId}:export',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'projectId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'import' => array(
+              'path' => 'v1/projects/{projectId}:import',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'projectId' => array(
@@ -134,6 +155,53 @@ class Google_Service_Datastore extends Google_Service
           )
         )
     );
+    $this->projects_indexes = new Google_Service_Datastore_Resource_ProjectsIndexes(
+        $this,
+        $this->serviceName,
+        'indexes',
+        array(
+          'methods' => array(
+            'get' => array(
+              'path' => 'v1/projects/{projectId}/indexes/{indexId}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'projectId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'indexId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'list' => array(
+              'path' => 'v1/projects/{projectId}/indexes',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'projectId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+              ),
+            ),
+          )
+        )
+    );
     $this->projects_operations = new Google_Service_Datastore_Resource_ProjectsOperations(
         $this,
         $this->serviceName,
@@ -179,6 +247,10 @@ class Google_Service_Datastore extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -186,10 +258,6 @@ class Google_Service_Datastore extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
-                ),
-                'filter' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),

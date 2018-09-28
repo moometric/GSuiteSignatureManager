@@ -19,7 +19,7 @@
  * Service definition for HangoutsChat (v1).
  *
  * <p>
-</p>
+ * Enables bots to fetch information and perform actions in Hangouts Chat.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -32,10 +32,6 @@ class Google_Service_HangoutsChat extends Google_Service
 {
 
 
-  public $dms_conversations_messages;
-  public $dms_messages;
-  public $rooms_conversations_messages;
-  public $rooms_messages;
   public $spaces;
   public $spaces_members;
   public $spaces_messages;
@@ -53,102 +49,6 @@ class Google_Service_HangoutsChat extends Google_Service
     $this->version = 'v1';
     $this->serviceName = 'chat';
 
-    $this->dms_conversations_messages = new Google_Service_HangoutsChat_Resource_DmsConversationsMessages(
-        $this,
-        $this->serviceName,
-        'messages',
-        array(
-          'methods' => array(
-            'create' => array(
-              'path' => 'v1/{+parent}/messages',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'threadKey' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->dms_messages = new Google_Service_HangoutsChat_Resource_DmsMessages(
-        $this,
-        $this->serviceName,
-        'messages',
-        array(
-          'methods' => array(
-            'create' => array(
-              'path' => 'v1/{+parent}/messages',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'threadKey' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->rooms_conversations_messages = new Google_Service_HangoutsChat_Resource_RoomsConversationsMessages(
-        $this,
-        $this->serviceName,
-        'messages',
-        array(
-          'methods' => array(
-            'create' => array(
-              'path' => 'v1/{+parent}/messages',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'threadKey' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->rooms_messages = new Google_Service_HangoutsChat_Resource_RoomsMessages(
-        $this,
-        $this->serviceName,
-        'messages',
-        array(
-          'methods' => array(
-            'create' => array(
-              'path' => 'v1/{+parent}/messages',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'parent' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'threadKey' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),
-          )
-        )
-    );
     $this->spaces = new Google_Service_HangoutsChat_Resource_Spaces(
         $this,
         $this->serviceName,

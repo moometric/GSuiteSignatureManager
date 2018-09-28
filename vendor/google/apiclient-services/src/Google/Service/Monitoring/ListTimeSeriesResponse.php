@@ -18,10 +18,26 @@
 class Google_Service_Monitoring_ListTimeSeriesResponse extends Google_Collection
 {
   protected $collection_key = 'timeSeries';
+  protected $executionErrorsType = 'Google_Service_Monitoring_Status';
+  protected $executionErrorsDataType = 'array';
   public $nextPageToken;
   protected $timeSeriesType = 'Google_Service_Monitoring_TimeSeries';
   protected $timeSeriesDataType = 'array';
 
+  /**
+   * @param Google_Service_Monitoring_Status
+   */
+  public function setExecutionErrors($executionErrors)
+  {
+    $this->executionErrors = $executionErrors;
+  }
+  /**
+   * @return Google_Service_Monitoring_Status
+   */
+  public function getExecutionErrors()
+  {
+    return $this->executionErrors;
+  }
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;

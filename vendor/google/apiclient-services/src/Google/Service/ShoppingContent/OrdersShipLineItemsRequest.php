@@ -22,6 +22,7 @@ class Google_Service_ShoppingContent_OrdersShipLineItemsRequest extends Google_C
   protected $lineItemsType = 'Google_Service_ShoppingContent_OrderShipmentLineItemShipment';
   protected $lineItemsDataType = 'array';
   public $operationId;
+  public $shipmentGroupId;
   public $shipmentId;
   protected $shipmentInfosType = 'Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo';
   protected $shipmentInfosDataType = 'array';
@@ -56,6 +57,14 @@ class Google_Service_ShoppingContent_OrdersShipLineItemsRequest extends Google_C
   public function getOperationId()
   {
     return $this->operationId;
+  }
+  public function setShipmentGroupId($shipmentGroupId)
+  {
+    $this->shipmentGroupId = $shipmentGroupId;
+  }
+  public function getShipmentGroupId()
+  {
+    return $this->shipmentGroupId;
   }
   public function setShipmentId($shipmentId)
   {

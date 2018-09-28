@@ -26,25 +26,51 @@
 class Google_Service_DLP_Resource_ProjectsDlpJobs extends Google_Service_Resource
 {
   /**
-   * Starts asynchronous cancellation on a long-running DlpJob.  The server makes
-   * a best effort to cancel the DlpJob, but success is not guaranteed.
+   * Starts asynchronous cancellation on a long-running DlpJob. The server makes a
+   * best effort to cancel the DlpJob, but success is not guaranteed. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    * (dlpJobs.cancel)
    *
    * @param string $name The name of the DlpJob resource to be cancelled.
-   * @param Google_Service_DLP_GooglePrivacyDlpV2beta2CancelDlpJobRequest $postBody
+   * @param Google_Service_DLP_GooglePrivacyDlpV2CancelDlpJobRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_DLP_GoogleProtobufEmpty
    */
-  public function cancel($name, Google_Service_DLP_GooglePrivacyDlpV2beta2CancelDlpJobRequest $postBody, $optParams = array())
+  public function cancel($name, Google_Service_DLP_GooglePrivacyDlpV2CancelDlpJobRequest $postBody, $optParams = array())
   {
     $params = array('name' => $name, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('cancel', array($params), "Google_Service_DLP_GoogleProtobufEmpty");
   }
   /**
+   * Creates a new job to inspect storage or calculate risk metrics. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   *
+   * When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the
+   * system will automatically choose what detectors to run. By default this may
+   * be all types, but may change over time as detectors are updated.
+   * (dlpJobs.create)
+   *
+   * @param string $parent The parent resource name, for example projects/my-
+   * project-id.
+   * @param Google_Service_DLP_GooglePrivacyDlpV2CreateDlpJobRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_DLP_GooglePrivacyDlpV2DlpJob
+   */
+  public function create($parent, Google_Service_DLP_GooglePrivacyDlpV2CreateDlpJobRequest $postBody, $optParams = array())
+  {
+    $params = array('parent' => $parent, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('create', array($params), "Google_Service_DLP_GooglePrivacyDlpV2DlpJob");
+  }
+  /**
    * Deletes a long-running DlpJob. This method indicates that the client is no
    * longer interested in the DlpJob result. The job will be cancelled if
-   * possible. (dlpJobs.delete)
+   * possible. See https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * (dlpJobs.delete)
    *
    * @param string $name The name of the DlpJob resource to be deleted.
    * @param array $optParams Optional parameters.
@@ -57,20 +83,25 @@ class Google_Service_DLP_Resource_ProjectsDlpJobs extends Google_Service_Resourc
     return $this->call('delete', array($params), "Google_Service_DLP_GoogleProtobufEmpty");
   }
   /**
-   * Gets the latest state of a long-running DlpJob. (dlpJobs.get)
+   * Gets the latest state of a long-running DlpJob. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * (dlpJobs.get)
    *
    * @param string $name The name of the DlpJob resource.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2DlpJob
+   * @return Google_Service_DLP_GooglePrivacyDlpV2DlpJob
    */
   public function get($name, $optParams = array())
   {
     $params = array('name' => $name);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_DLP_GooglePrivacyDlpV2beta2DlpJob");
+    return $this->call('get', array($params), "Google_Service_DLP_GooglePrivacyDlpV2DlpJob");
   }
   /**
-   * Lists DlpJobs that match the specified filter in the request.
+   * Lists DlpJobs that match the specified filter in the request. See
+   * https://cloud.google.com/dlp/docs/inspecting-storage and
+   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
    * (dlpJobs.listProjectsDlpJobs)
    *
    * @param string $parent The parent resource name, for example projects/my-
@@ -101,12 +132,12 @@ class Google_Service_DLP_Resource_ProjectsDlpJobs extends Google_Service_Resourc
    * @opt_param string pageToken The standard list page token.
    * @opt_param int pageSize The standard list page size.
    * @opt_param string type The type of job. Defaults to `DlpJobType.INSPECT`
-   * @return Google_Service_DLP_GooglePrivacyDlpV2beta2ListDlpJobsResponse
+   * @return Google_Service_DLP_GooglePrivacyDlpV2ListDlpJobsResponse
    */
   public function listProjectsDlpJobs($parent, $optParams = array())
   {
     $params = array('parent' => $parent);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_DLP_GooglePrivacyDlpV2beta2ListDlpJobsResponse");
+    return $this->call('list', array($params), "Google_Service_DLP_GooglePrivacyDlpV2ListDlpJobsResponse");
   }
 }

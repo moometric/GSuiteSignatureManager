@@ -18,6 +18,7 @@
 class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryUpdateShipment extends Google_Model
 {
   public $carrier;
+  public $deliveryDate;
   public $shipmentId;
   public $status;
   public $trackingId;
@@ -29,6 +30,14 @@ class Google_Service_ShoppingContent_OrdersCustomBatchRequestEntryUpdateShipment
   public function getCarrier()
   {
     return $this->carrier;
+  }
+  public function setDeliveryDate($deliveryDate)
+  {
+    $this->deliveryDate = $deliveryDate;
+  }
+  public function getDeliveryDate()
+  {
+    return $this->deliveryDate;
   }
   public function setShipmentId($shipmentId)
   {

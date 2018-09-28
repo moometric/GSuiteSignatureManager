@@ -126,6 +126,24 @@ class Google_Service_ShoppingContent_Resource_Accounts extends Google_Service_Re
     return $this->call('insert', array($params), "Google_Service_ShoppingContent_Account");
   }
   /**
+   * Performs an action on a link between a Merchant Center account and another
+   * account. (accounts.link)
+   *
+   * @param string $merchantId The ID of the managing account. If this parameter
+   * is not the same as accountId, then this account must be a multi-client
+   * account and accountId must be the ID of a sub-account of this account.
+   * @param string $accountId The ID of the account that should be linked.
+   * @param Google_Service_ShoppingContent_AccountsLinkRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_ShoppingContent_AccountsLinkResponse
+   */
+  public function link($merchantId, $accountId, Google_Service_ShoppingContent_AccountsLinkRequest $postBody, $optParams = array())
+  {
+    $params = array('merchantId' => $merchantId, 'accountId' => $accountId, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('link', array($params), "Google_Service_ShoppingContent_AccountsLinkResponse");
+  }
+  /**
    * Lists the sub-accounts in your Merchant Center account.
    * (accounts.listAccounts)
    *

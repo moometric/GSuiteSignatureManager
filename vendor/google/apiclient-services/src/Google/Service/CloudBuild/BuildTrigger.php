@@ -15,8 +15,9 @@
  * the License.
  */
 
-class Google_Service_CloudBuild_BuildTrigger extends Google_Model
+class Google_Service_CloudBuild_BuildTrigger extends Google_Collection
 {
+  protected $collection_key = 'includedFiles';
   protected $buildType = 'Google_Service_CloudBuild_Build';
   protected $buildDataType = '';
   public $createTime;
@@ -24,6 +25,8 @@ class Google_Service_CloudBuild_BuildTrigger extends Google_Model
   public $disabled;
   public $filename;
   public $id;
+  public $ignoredFiles;
+  public $includedFiles;
   public $substitutions;
   protected $triggerTemplateType = 'Google_Service_CloudBuild_RepoSource';
   protected $triggerTemplateDataType = '';
@@ -81,6 +84,22 @@ class Google_Service_CloudBuild_BuildTrigger extends Google_Model
   public function getId()
   {
     return $this->id;
+  }
+  public function setIgnoredFiles($ignoredFiles)
+  {
+    $this->ignoredFiles = $ignoredFiles;
+  }
+  public function getIgnoredFiles()
+  {
+    return $this->ignoredFiles;
+  }
+  public function setIncludedFiles($includedFiles)
+  {
+    $this->includedFiles = $includedFiles;
+  }
+  public function getIncludedFiles()
+  {
+    return $this->includedFiles;
   }
   public function setSubstitutions($substitutions)
   {

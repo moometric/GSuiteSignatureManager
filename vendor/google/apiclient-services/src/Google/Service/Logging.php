@@ -19,7 +19,7 @@
  * Service definition for Logging (v2).
  *
  * <p>
- * Writes log entries and manages your Stackdriver Logging configuration.</p>
+ * Writes log entries and manages your Logging configuration.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -1080,13 +1080,13 @@ class Google_Service_Logging extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),'patch' => array(

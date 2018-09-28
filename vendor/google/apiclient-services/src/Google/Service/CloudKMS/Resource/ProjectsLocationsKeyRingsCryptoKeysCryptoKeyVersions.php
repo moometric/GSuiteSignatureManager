@@ -26,6 +26,40 @@
 class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions extends Google_Service_Resource
 {
   /**
+   * Decrypts data that was encrypted with a public key retrieved from
+   * GetPublicKey corresponding to a CryptoKeyVersion with CryptoKey.purpose
+   * ASYMMETRIC_DECRYPT. (cryptoKeyVersions.asymmetricDecrypt)
+   *
+   * @param string $name Required. The resource name of the CryptoKeyVersion to
+   * use for decryption.
+   * @param Google_Service_CloudKMS_AsymmetricDecryptRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_CloudKMS_AsymmetricDecryptResponse
+   */
+  public function asymmetricDecrypt($name, Google_Service_CloudKMS_AsymmetricDecryptRequest $postBody, $optParams = array())
+  {
+    $params = array('name' => $name, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('asymmetricDecrypt', array($params), "Google_Service_CloudKMS_AsymmetricDecryptResponse");
+  }
+  /**
+   * Signs data using a CryptoKeyVersion with CryptoKey.purpose ASYMMETRIC_SIGN,
+   * producing a signature that can be verified with the public key retrieved from
+   * GetPublicKey. (cryptoKeyVersions.asymmetricSign)
+   *
+   * @param string $name Required. The resource name of the CryptoKeyVersion to
+   * use for signing.
+   * @param Google_Service_CloudKMS_AsymmetricSignRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_CloudKMS_AsymmetricSignResponse
+   */
+  public function asymmetricSign($name, Google_Service_CloudKMS_AsymmetricSignRequest $postBody, $optParams = array())
+  {
+    $params = array('name' => $name, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('asymmetricSign', array($params), "Google_Service_CloudKMS_AsymmetricSignResponse");
+  }
+  /**
    * Create a new CryptoKeyVersion in a CryptoKey.
    *
    * The server will assign the next sequential id. If unset, state will be set to
@@ -79,6 +113,21 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
     return $this->call('get', array($params), "Google_Service_CloudKMS_CryptoKeyVersion");
   }
   /**
+   * Returns the public key for the given CryptoKeyVersion. The CryptoKey.purpose
+   * must be ASYMMETRIC_SIGN or ASYMMETRIC_DECRYPT.
+   * (cryptoKeyVersions.getPublicKey)
+   *
+   * @param string $name The name of the CryptoKeyVersion public key to get.
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_CloudKMS_PublicKey
+   */
+  public function getPublicKey($name, $optParams = array())
+  {
+    $params = array('name' => $name);
+    $params = array_merge($params, $optParams);
+    return $this->call('getPublicKey', array($params), "Google_Service_CloudKMS_PublicKey");
+  }
+  /**
    * Lists CryptoKeyVersions.
    * (cryptoKeyVersions.listProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions)
    *
@@ -93,6 +142,7 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
    * obtained by including the ListCryptoKeyVersionsResponse.next_page_token in a
    * subsequent request. If unspecified, the server will pick an appropriate
    * default.
+   * @opt_param string view The fields to include in the response.
    * @return Google_Service_CloudKMS_ListCryptoKeyVersionsResponse
    */
   public function listProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions($parent, $optParams = array())
@@ -124,7 +174,7 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
     return $this->call('patch', array($params), "Google_Service_CloudKMS_CryptoKeyVersion");
   }
   /**
-   * Restore a CryptoKeyVersion in the DESTROY_SCHEDULED, state.
+   * Restore a CryptoKeyVersion in the DESTROY_SCHEDULED state.
    *
    * Upon restoration of the CryptoKeyVersion, state will be set to DISABLED, and
    * destroy_time will be cleared. (cryptoKeyVersions.restore)

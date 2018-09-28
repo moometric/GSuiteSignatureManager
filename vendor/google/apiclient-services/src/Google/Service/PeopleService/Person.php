@@ -69,6 +69,8 @@ class Google_Service_PeopleService_Person extends Google_Collection
   protected $residencesType = 'Google_Service_PeopleService_Residence';
   protected $residencesDataType = 'array';
   public $resourceName;
+  protected $sipAddressesType = 'Google_Service_PeopleService_SipAddress';
+  protected $sipAddressesDataType = 'array';
   protected $skillsType = 'Google_Service_PeopleService_Skill';
   protected $skillsDataType = 'array';
   protected $taglinesType = 'Google_Service_PeopleService_Tagline';
@@ -437,6 +439,20 @@ class Google_Service_PeopleService_Person extends Google_Collection
   public function getResourceName()
   {
     return $this->resourceName;
+  }
+  /**
+   * @param Google_Service_PeopleService_SipAddress
+   */
+  public function setSipAddresses($sipAddresses)
+  {
+    $this->sipAddresses = $sipAddresses;
+  }
+  /**
+   * @return Google_Service_PeopleService_SipAddress
+   */
+  public function getSipAddresses()
+  {
+    return $this->sipAddresses;
   }
   /**
    * @param Google_Service_PeopleService_Skill

@@ -15,8 +15,9 @@
  * the License.
  */
 
-class Google_Service_Bigquery_JobStatistics extends Google_Model
+class Google_Service_Bigquery_JobStatistics extends Google_Collection
 {
+  protected $collection_key = 'quotaDeferments';
   public $completionRatio;
   public $creationTime;
   public $endTime;
@@ -26,6 +27,7 @@ class Google_Service_Bigquery_JobStatistics extends Google_Model
   protected $loadDataType = '';
   protected $queryType = 'Google_Service_Bigquery_JobStatistics2';
   protected $queryDataType = '';
+  public $quotaDeferments;
   public $startTime;
   public $totalBytesProcessed;
 
@@ -94,6 +96,14 @@ class Google_Service_Bigquery_JobStatistics extends Google_Model
   public function getQuery()
   {
     return $this->query;
+  }
+  public function setQuotaDeferments($quotaDeferments)
+  {
+    $this->quotaDeferments = $quotaDeferments;
+  }
+  public function getQuotaDeferments()
+  {
+    return $this->quotaDeferments;
   }
   public function setStartTime($startTime)
   {

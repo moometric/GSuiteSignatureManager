@@ -17,59 +17,41 @@
 
 class Google_Service_Analytics_AccountTreeRequestAccountSettings extends Google_Model
 {
-  public $admobReporting;
-  public $sharingWithGoogleAnySales;
-  public $sharingWithGoogleProducts;
-  public $sharingWithGoogleSales;
-  public $sharingWithGoogleSupport;
-  public $sharingWithOthers;
+  public $shareAnonymouslyWithOthers;
+  public $shareWithGoogleProducts;
+  public $shareWithSpecialists;
+  public $shareWithSupport;
 
-  public function setAdmobReporting($admobReporting)
+  public function setShareAnonymouslyWithOthers($shareAnonymouslyWithOthers)
   {
-    $this->admobReporting = $admobReporting;
+    $this->shareAnonymouslyWithOthers = $shareAnonymouslyWithOthers;
   }
-  public function getAdmobReporting()
+  public function getShareAnonymouslyWithOthers()
   {
-    return $this->admobReporting;
+    return $this->shareAnonymouslyWithOthers;
   }
-  public function setSharingWithGoogleAnySales($sharingWithGoogleAnySales)
+  public function setShareWithGoogleProducts($shareWithGoogleProducts)
   {
-    $this->sharingWithGoogleAnySales = $sharingWithGoogleAnySales;
+    $this->shareWithGoogleProducts = $shareWithGoogleProducts;
   }
-  public function getSharingWithGoogleAnySales()
+  public function getShareWithGoogleProducts()
   {
-    return $this->sharingWithGoogleAnySales;
+    return $this->shareWithGoogleProducts;
   }
-  public function setSharingWithGoogleProducts($sharingWithGoogleProducts)
+  public function setShareWithSpecialists($shareWithSpecialists)
   {
-    $this->sharingWithGoogleProducts = $sharingWithGoogleProducts;
+    $this->shareWithSpecialists = $shareWithSpecialists;
   }
-  public function getSharingWithGoogleProducts()
+  public function getShareWithSpecialists()
   {
-    return $this->sharingWithGoogleProducts;
+    return $this->shareWithSpecialists;
   }
-  public function setSharingWithGoogleSales($sharingWithGoogleSales)
+  public function setShareWithSupport($shareWithSupport)
   {
-    $this->sharingWithGoogleSales = $sharingWithGoogleSales;
+    $this->shareWithSupport = $shareWithSupport;
   }
-  public function getSharingWithGoogleSales()
+  public function getShareWithSupport()
   {
-    return $this->sharingWithGoogleSales;
-  }
-  public function setSharingWithGoogleSupport($sharingWithGoogleSupport)
-  {
-    $this->sharingWithGoogleSupport = $sharingWithGoogleSupport;
-  }
-  public function getSharingWithGoogleSupport()
-  {
-    return $this->sharingWithGoogleSupport;
-  }
-  public function setSharingWithOthers($sharingWithOthers)
-  {
-    $this->sharingWithOthers = $sharingWithOthers;
-  }
-  public function getSharingWithOthers()
-  {
-    return $this->sharingWithOthers;
+    return $this->shareWithSupport;
   }
 }

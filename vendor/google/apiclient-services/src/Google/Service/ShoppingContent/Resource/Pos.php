@@ -43,7 +43,7 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
   /**
    * Deletes a store for the given merchant. (pos.delete)
    *
-   * @param string $merchantId The ID of the POS provider.
+   * @param string $merchantId The ID of the POS or inventory data provider.
    * @param string $targetMerchantId The ID of the target merchant.
    * @param string $storeCode A store code that is unique per merchant.
    * @param array $optParams Optional parameters.
@@ -59,7 +59,7 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
   /**
    * Retrieves information about the given store. (pos.get)
    *
-   * @param string $merchantId The ID of the POS provider.
+   * @param string $merchantId The ID of the POS or inventory data provider.
    * @param string $targetMerchantId The ID of the target merchant.
    * @param string $storeCode A store code that is unique per merchant.
    * @param array $optParams Optional parameters.
@@ -74,7 +74,7 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
   /**
    * Creates a store for the given merchant. (pos.insert)
    *
-   * @param string $merchantId The ID of the POS provider.
+   * @param string $merchantId The ID of the POS or inventory data provider.
    * @param string $targetMerchantId The ID of the target merchant.
    * @param Google_Service_ShoppingContent_PosStore $postBody
    * @param array $optParams Optional parameters.
@@ -91,7 +91,7 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
   /**
    * Submit inventory for the given merchant. (pos.inventory)
    *
-   * @param string $merchantId The ID of the POS provider.
+   * @param string $merchantId The ID of the POS or inventory data provider.
    * @param string $targetMerchantId The ID of the target merchant.
    * @param Google_Service_ShoppingContent_PosInventoryRequest $postBody
    * @param array $optParams Optional parameters.
@@ -108,7 +108,7 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
   /**
    * Lists the stores of the target merchant. (pos.listPos)
    *
-   * @param string $merchantId The ID of the POS provider.
+   * @param string $merchantId The ID of the POS or inventory data provider.
    * @param string $targetMerchantId The ID of the target merchant.
    * @param array $optParams Optional parameters.
    * @return Google_Service_ShoppingContent_PosListResponse
@@ -122,7 +122,7 @@ class Google_Service_ShoppingContent_Resource_Pos extends Google_Service_Resourc
   /**
    * Submit a sale event for the given merchant. (pos.sale)
    *
-   * @param string $merchantId The ID of the POS provider.
+   * @param string $merchantId The ID of the POS or inventory data provider.
    * @param string $targetMerchantId The ID of the target merchant.
    * @param Google_Service_ShoppingContent_PosSaleRequest $postBody
    * @param array $optParams Optional parameters.

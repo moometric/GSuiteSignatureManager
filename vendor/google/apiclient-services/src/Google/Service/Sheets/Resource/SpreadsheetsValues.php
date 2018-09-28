@@ -44,9 +44,6 @@ class Google_Service_Sheets_Resource_SpreadsheetsValues extends Google_Service_R
    * @param Google_Service_Sheets_ValueRange $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool includeValuesInResponse Determines if the update response
-   * should include the values of the cells that were appended. By default,
-   * responses do not include the updated values.
    * @opt_param string responseValueRenderOption Determines how values in the
    * response should be rendered. The default render option is
    * ValueRenderOption.FORMATTED_VALUE.
@@ -56,6 +53,9 @@ class Google_Service_Sheets_Resource_SpreadsheetsValues extends Google_Service_R
    * and durations in the response should be rendered. This is ignored if
    * response_value_render_option is FORMATTED_VALUE. The default dateTime render
    * option is [DateTimeRenderOption.SERIAL_NUMBER].
+   * @opt_param bool includeValuesInResponse Determines if the update response
+   * should include the values of the cells that were appended. By default,
+   * responses do not include the updated values.
    * @return Google_Service_Sheets_AppendValuesResponse
    */
   public function append($spreadsheetId, $range, Google_Service_Sheets_ValueRange $postBody, $optParams = array())
@@ -237,7 +237,7 @@ class Google_Service_Sheets_Resource_SpreadsheetsValues extends Google_Service_R
    * @opt_param string responseDateTimeRenderOption Determines how dates, times,
    * and durations in the response should be rendered. This is ignored if
    * response_value_render_option is FORMATTED_VALUE. The default dateTime render
-   * option is [DateTimeRenderOption.SERIAL_NUMBER].
+   * option is DateTimeRenderOption.SERIAL_NUMBER.
    * @opt_param bool includeValuesInResponse Determines if the update response
    * should include the values of the cells that were updated. By default,
    * responses do not include the updated values. If the range to write was larger

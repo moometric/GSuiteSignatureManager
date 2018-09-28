@@ -33,6 +33,7 @@ class Google_Service_AdExchangeBuyer_Creative extends Google_Collection
   public $clickThroughUrl;
   protected $correctionsType = 'Google_Service_AdExchangeBuyer_CreativeCorrections';
   protected $correctionsDataType = 'array';
+  public $creativeStatusIdentityType;
   public $dealsStatus;
   public $detectedDomains;
   protected $filteringReasonsType = 'Google_Service_AdExchangeBuyer_CreativeFilteringReasons';
@@ -148,6 +149,14 @@ class Google_Service_AdExchangeBuyer_Creative extends Google_Collection
   public function getCorrections()
   {
     return $this->corrections;
+  }
+  public function setCreativeStatusIdentityType($creativeStatusIdentityType)
+  {
+    $this->creativeStatusIdentityType = $creativeStatusIdentityType;
+  }
+  public function getCreativeStatusIdentityType()
+  {
+    return $this->creativeStatusIdentityType;
   }
   public function setDealsStatus($dealsStatus)
   {

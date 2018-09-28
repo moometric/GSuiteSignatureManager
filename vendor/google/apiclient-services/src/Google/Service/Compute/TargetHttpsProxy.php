@@ -23,8 +23,10 @@ class Google_Service_Compute_TargetHttpsProxy extends Google_Collection
   public $id;
   public $kind;
   public $name;
+  public $quicOverride;
   public $selfLink;
   public $sslCertificates;
+  public $sslPolicy;
   public $urlMap;
 
   public function setCreationTimestamp($creationTimestamp)
@@ -67,6 +69,14 @@ class Google_Service_Compute_TargetHttpsProxy extends Google_Collection
   {
     return $this->name;
   }
+  public function setQuicOverride($quicOverride)
+  {
+    $this->quicOverride = $quicOverride;
+  }
+  public function getQuicOverride()
+  {
+    return $this->quicOverride;
+  }
   public function setSelfLink($selfLink)
   {
     $this->selfLink = $selfLink;
@@ -82,6 +92,14 @@ class Google_Service_Compute_TargetHttpsProxy extends Google_Collection
   public function getSslCertificates()
   {
     return $this->sslCertificates;
+  }
+  public function setSslPolicy($sslPolicy)
+  {
+    $this->sslPolicy = $sslPolicy;
+  }
+  public function getSslPolicy()
+  {
+    return $this->sslPolicy;
   }
   public function setUrlMap($urlMap)
   {

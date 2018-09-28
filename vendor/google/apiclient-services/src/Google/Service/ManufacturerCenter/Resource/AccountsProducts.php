@@ -75,6 +75,9 @@ class Google_Service_ManufacturerCenter_Resource_AccountsProducts extends Google
    * `product_id`     -   The ID of the product. For more information, see
    * https://support.google.com/manufacturers/answer/6124116#id.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param string include The information to be included in the response.
+   * Only sections listed here will be returned.
    * @return Google_Service_ManufacturerCenter_Product
    */
   public function get($parent, $name, $optParams = array())
@@ -95,6 +98,8 @@ class Google_Service_ManufacturerCenter_Resource_AccountsProducts extends Google
    * @opt_param string pageToken The token returned by the previous request.
    * @opt_param int pageSize Maximum number of product statuses to return in the
    * response, used for paging.
+   * @opt_param string include The information to be included in the response.
+   * Only sections listed here will be returned.
    * @return Google_Service_ManufacturerCenter_ListProductsResponse
    */
   public function listAccountsProducts($parent, $optParams = array())

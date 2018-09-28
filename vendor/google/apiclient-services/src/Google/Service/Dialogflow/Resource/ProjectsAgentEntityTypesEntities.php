@@ -33,11 +33,11 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypesEntities extend
    *
    * @param string $parent Required. The name of the entity type to create
    * entities in. Format: `projects//agent/entityTypes/`.
-   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchCreateEntitiesRequest $postBody
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchCreateEntitiesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleLongrunningOperation
    */
-  public function batchCreate($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchCreateEntitiesRequest $postBody, $optParams = array())
+  public function batchCreate($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchCreateEntitiesRequest $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -50,11 +50,11 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypesEntities extend
    *
    * @param string $parent Required. The name of the entity type to delete entries
    * for. Format: `projects//agent/entityTypes/`.
-   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchDeleteEntitiesRequest $postBody
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchDeleteEntitiesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleLongrunningOperation
    */
-  public function batchDelete($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchDeleteEntitiesRequest $postBody, $optParams = array())
+  public function batchDelete($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchDeleteEntitiesRequest $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
@@ -68,11 +68,11 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentEntityTypesEntities extend
    *
    * @param string $parent Required. The name of the entity type to update the
    * entities in. Format: `projects//agent/entityTypes/`.
-   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchUpdateEntitiesRequest $postBody
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchUpdateEntitiesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Dialogflow_GoogleLongrunningOperation
    */
-  public function batchUpdate($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1BatchUpdateEntitiesRequest $postBody, $optParams = array())
+  public function batchUpdate($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2BatchUpdateEntitiesRequest $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);

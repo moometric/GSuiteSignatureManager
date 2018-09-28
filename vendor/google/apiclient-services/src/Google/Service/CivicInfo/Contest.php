@@ -19,6 +19,7 @@ class Google_Service_CivicInfo_Contest extends Google_Collection
 {
   protected $collection_key = 'sources';
   public $ballotPlacement;
+  public $ballotTitle;
   protected $candidatesType = 'Google_Service_CivicInfo_Candidate';
   protected $candidatesDataType = 'array';
   protected $districtType = 'Google_Service_CivicInfo_ElectoralDistrict';
@@ -53,6 +54,14 @@ class Google_Service_CivicInfo_Contest extends Google_Collection
   public function getBallotPlacement()
   {
     return $this->ballotPlacement;
+  }
+  public function setBallotTitle($ballotTitle)
+  {
+    $this->ballotTitle = $ballotTitle;
+  }
+  public function getBallotTitle()
+  {
+    return $this->ballotTitle;
   }
   /**
    * @param Google_Service_CivicInfo_Candidate

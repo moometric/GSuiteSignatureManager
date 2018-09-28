@@ -84,6 +84,11 @@ class Google_Service_ManufacturerCenter extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'include' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ),
               ),
             ),'list' => array(
               'path' => 'v1/{+parent}/products',
@@ -101,6 +106,11 @@ class Google_Service_ManufacturerCenter extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+                'include' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
               ),
             ),'update' => array(

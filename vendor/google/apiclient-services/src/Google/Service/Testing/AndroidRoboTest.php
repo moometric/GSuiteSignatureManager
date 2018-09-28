@@ -26,6 +26,8 @@ class Google_Service_Testing_AndroidRoboTest extends Google_Collection
   public $maxSteps;
   protected $roboDirectivesType = 'Google_Service_Testing_RoboDirective';
   protected $roboDirectivesDataType = 'array';
+  protected $roboScriptType = 'Google_Service_Testing_FileReference';
+  protected $roboScriptDataType = '';
   protected $startingIntentsType = 'Google_Service_Testing_RoboStartingIntent';
   protected $startingIntentsDataType = 'array';
 
@@ -88,6 +90,20 @@ class Google_Service_Testing_AndroidRoboTest extends Google_Collection
   public function getRoboDirectives()
   {
     return $this->roboDirectives;
+  }
+  /**
+   * @param Google_Service_Testing_FileReference
+   */
+  public function setRoboScript(Google_Service_Testing_FileReference $roboScript)
+  {
+    $this->roboScript = $roboScript;
+  }
+  /**
+   * @return Google_Service_Testing_FileReference
+   */
+  public function getRoboScript()
+  {
+    return $this->roboScript;
   }
   /**
    * @param Google_Service_Testing_RoboStartingIntent

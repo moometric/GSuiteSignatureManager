@@ -17,15 +17,34 @@
 
 class Google_Service_ServiceControl_LogEntry extends Google_Model
 {
+  protected $httpRequestType = 'Google_Service_ServiceControl_HttpRequest';
+  protected $httpRequestDataType = '';
   public $insertId;
   public $labels;
   public $name;
+  protected $operationType = 'Google_Service_ServiceControl_LogEntryOperation';
+  protected $operationDataType = '';
   public $protoPayload;
   public $severity;
   public $structPayload;
   public $textPayload;
   public $timestamp;
+  public $trace;
 
+  /**
+   * @param Google_Service_ServiceControl_HttpRequest
+   */
+  public function setHttpRequest(Google_Service_ServiceControl_HttpRequest $httpRequest)
+  {
+    $this->httpRequest = $httpRequest;
+  }
+  /**
+   * @return Google_Service_ServiceControl_HttpRequest
+   */
+  public function getHttpRequest()
+  {
+    return $this->httpRequest;
+  }
   public function setInsertId($insertId)
   {
     $this->insertId = $insertId;
@@ -49,6 +68,20 @@ class Google_Service_ServiceControl_LogEntry extends Google_Model
   public function getName()
   {
     return $this->name;
+  }
+  /**
+   * @param Google_Service_ServiceControl_LogEntryOperation
+   */
+  public function setOperation(Google_Service_ServiceControl_LogEntryOperation $operation)
+  {
+    $this->operation = $operation;
+  }
+  /**
+   * @return Google_Service_ServiceControl_LogEntryOperation
+   */
+  public function getOperation()
+  {
+    return $this->operation;
   }
   public function setProtoPayload($protoPayload)
   {
@@ -89,5 +122,13 @@ class Google_Service_ServiceControl_LogEntry extends Google_Model
   public function getTimestamp()
   {
     return $this->timestamp;
+  }
+  public function setTrace($trace)
+  {
+    $this->trace = $trace;
+  }
+  public function getTrace()
+  {
+    return $this->trace;
   }
 }

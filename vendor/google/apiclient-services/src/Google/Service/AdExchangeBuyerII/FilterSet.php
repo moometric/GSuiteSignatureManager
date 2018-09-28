@@ -23,10 +23,10 @@ class Google_Service_AdExchangeBuyerII_FilterSet extends Google_Collection
   public $creativeId;
   public $dealId;
   public $environment;
-  public $format;
   public $formats;
   public $name;
   public $platforms;
+  public $publisherIdentifiers;
   protected $realtimeTimeRangeType = 'Google_Service_AdExchangeBuyerII_RealtimeTimeRange';
   protected $realtimeTimeRangeDataType = '';
   protected $relativeDateRangeType = 'Google_Service_AdExchangeBuyerII_RelativeDateRange';
@@ -72,14 +72,6 @@ class Google_Service_AdExchangeBuyerII_FilterSet extends Google_Collection
   {
     return $this->environment;
   }
-  public function setFormat($format)
-  {
-    $this->format = $format;
-  }
-  public function getFormat()
-  {
-    return $this->format;
-  }
   public function setFormats($formats)
   {
     $this->formats = $formats;
@@ -103,6 +95,14 @@ class Google_Service_AdExchangeBuyerII_FilterSet extends Google_Collection
   public function getPlatforms()
   {
     return $this->platforms;
+  }
+  public function setPublisherIdentifiers($publisherIdentifiers)
+  {
+    $this->publisherIdentifiers = $publisherIdentifiers;
+  }
+  public function getPublisherIdentifiers()
+  {
+    return $this->publisherIdentifiers;
   }
   /**
    * @param Google_Service_AdExchangeBuyerII_RealtimeTimeRange

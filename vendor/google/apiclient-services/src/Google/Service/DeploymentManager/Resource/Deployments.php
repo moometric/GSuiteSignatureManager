@@ -95,6 +95,8 @@ class Google_Service_DeploymentManager_Resource_Deployments extends Google_Servi
    * @param Google_Service_DeploymentManager_Deployment $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string createPolicy Sets the policy to use for creating new
+   * resources.
    * @opt_param bool preview If set to true, creates a deployment and creates
    * "shell" resources but does not actually instantiate these resources. This
    * allows you to preview what your deployment looks like. After previewing a
@@ -199,11 +201,11 @@ class Google_Service_DeploymentManager_Resource_Deployments extends Google_Servi
    *
    * @param string $project Project ID for this request.
    * @param string $resource Name of the resource for this request.
-   * @param Google_Service_DeploymentManager_Policy $postBody
+   * @param Google_Service_DeploymentManager_GlobalSetPolicyRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_DeploymentManager_Policy
    */
-  public function setIamPolicy($project, $resource, Google_Service_DeploymentManager_Policy $postBody, $optParams = array())
+  public function setIamPolicy($project, $resource, Google_Service_DeploymentManager_GlobalSetPolicyRequest $postBody, $optParams = array())
   {
     $params = array('project' => $project, 'resource' => $resource, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);

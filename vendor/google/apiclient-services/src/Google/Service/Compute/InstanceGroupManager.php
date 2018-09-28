@@ -23,6 +23,8 @@ class Google_Service_Compute_InstanceGroupManager extends Google_Collection
   protected $currentActionsType = 'Google_Service_Compute_InstanceGroupManagerActionsSummary';
   protected $currentActionsDataType = '';
   public $description;
+  protected $distributionPolicyType = 'Google_Service_Compute_DistributionPolicy';
+  protected $distributionPolicyDataType = '';
   public $fingerprint;
   public $id;
   public $instanceGroup;
@@ -74,6 +76,20 @@ class Google_Service_Compute_InstanceGroupManager extends Google_Collection
   public function getDescription()
   {
     return $this->description;
+  }
+  /**
+   * @param Google_Service_Compute_DistributionPolicy
+   */
+  public function setDistributionPolicy(Google_Service_Compute_DistributionPolicy $distributionPolicy)
+  {
+    $this->distributionPolicy = $distributionPolicy;
+  }
+  /**
+   * @return Google_Service_Compute_DistributionPolicy
+   */
+  public function getDistributionPolicy()
+  {
+    return $this->distributionPolicy;
   }
   public function setFingerprint($fingerprint)
   {

@@ -68,6 +68,7 @@ class Google_Service_Gmail extends Google_Service
   public $users_messages;
   public $users_messages_attachments;
   public $users_settings;
+  public $users_settings_delegates;
   public $users_settings_filters;
   public $users_settings_forwardingAddresses;
   public $users_settings_sendAs;
@@ -671,6 +672,66 @@ class Google_Service_Gmail extends Google_Service
             ),'updateVacation' => array(
               'path' => '{userId}/settings/vacation',
               'httpMethod' => 'PUT',
+              'parameters' => array(
+                'userId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->users_settings_delegates = new Google_Service_Gmail_Resource_UsersSettingsDelegates(
+        $this,
+        $this->serviceName,
+        'delegates',
+        array(
+          'methods' => array(
+            'create' => array(
+              'path' => '{userId}/settings/delegates',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'userId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'delete' => array(
+              'path' => '{userId}/settings/delegates/{delegateEmail}',
+              'httpMethod' => 'DELETE',
+              'parameters' => array(
+                'userId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'delegateEmail' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'get' => array(
+              'path' => '{userId}/settings/delegates/{delegateEmail}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'userId' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'delegateEmail' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'list' => array(
+              'path' => '{userId}/settings/delegates',
+              'httpMethod' => 'GET',
               'parameters' => array(
                 'userId' => array(
                   'location' => 'path',

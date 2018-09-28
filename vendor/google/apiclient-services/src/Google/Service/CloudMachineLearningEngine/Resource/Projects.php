@@ -27,7 +27,7 @@ class Google_Service_CloudMachineLearningEngine_Resource_Projects extends Google
 {
   /**
    * Get the service account information associated with your project. You need
-   * this information in order to grant the service account persmissions for the
+   * this information in order to grant the service account permissions for the
    * Google Cloud Storage location where you put your model training code for
    * training the model with Google Cloud Machine Learning. (projects.getConfig)
    *

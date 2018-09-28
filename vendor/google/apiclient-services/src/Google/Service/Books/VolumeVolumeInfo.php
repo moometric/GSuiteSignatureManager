@@ -23,6 +23,7 @@ class Google_Service_Books_VolumeVolumeInfo extends Google_Collection
   public $averageRating;
   public $canonicalVolumeLink;
   public $categories;
+  public $comicsContent;
   public $contentVersion;
   public $description;
   protected $dimensionsType = 'Google_Service_Books_VolumeVolumeInfoDimensions';
@@ -90,6 +91,14 @@ class Google_Service_Books_VolumeVolumeInfo extends Google_Collection
   public function getCategories()
   {
     return $this->categories;
+  }
+  public function setComicsContent($comicsContent)
+  {
+    $this->comicsContent = $comicsContent;
+  }
+  public function getComicsContent()
+  {
+    return $this->comicsContent;
   }
   public function setContentVersion($contentVersion)
   {

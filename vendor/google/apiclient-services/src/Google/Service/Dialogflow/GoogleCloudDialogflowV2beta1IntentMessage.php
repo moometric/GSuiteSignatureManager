@@ -37,6 +37,12 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   protected $simpleResponsesDataType = '';
   protected $suggestionsType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageSuggestions';
   protected $suggestionsDataType = '';
+  protected $telephonyPlayAudioType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio';
+  protected $telephonyPlayAudioDataType = '';
+  protected $telephonySynthesizeSpeechType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech';
+  protected $telephonySynthesizeSpeechDataType = '';
+  protected $telephonyTransferCallType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall';
+  protected $telephonyTransferCallDataType = '';
   protected $textType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageText';
   protected $textDataType = '';
 
@@ -181,6 +187,48 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   public function getSuggestions()
   {
     return $this->suggestions;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio
+   */
+  public function setTelephonyPlayAudio(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio $telephonyPlayAudio)
+  {
+    $this->telephonyPlayAudio = $telephonyPlayAudio;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio
+   */
+  public function getTelephonyPlayAudio()
+  {
+    return $this->telephonyPlayAudio;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech
+   */
+  public function setTelephonySynthesizeSpeech(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech $telephonySynthesizeSpeech)
+  {
+    $this->telephonySynthesizeSpeech = $telephonySynthesizeSpeech;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech
+   */
+  public function getTelephonySynthesizeSpeech()
+  {
+    return $this->telephonySynthesizeSpeech;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall
+   */
+  public function setTelephonyTransferCall(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall $telephonyTransferCall)
+  {
+    $this->telephonyTransferCall = $telephonyTransferCall;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall
+   */
+  public function getTelephonyTransferCall()
+  {
+    return $this->telephonyTransferCall;
   }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageText

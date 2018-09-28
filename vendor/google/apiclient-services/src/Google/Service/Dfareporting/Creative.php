@@ -22,6 +22,8 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public $active;
   public $adParameters;
   public $adTagKeys;
+  protected $additionalSizesType = 'Google_Service_Dfareporting_Size';
+  protected $additionalSizesDataType = 'array';
   public $advertiserId;
   public $allowScriptAccess;
   public $archived;
@@ -65,6 +67,8 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   protected $lastModifiedInfoType = 'Google_Service_Dfareporting_LastModifiedInfo';
   protected $lastModifiedInfoDataType = '';
   public $latestTraffickedCreativeId;
+  public $mediaDescription;
+  public $mediaDuration;
   public $name;
   public $overrideCss;
   public $politeLoadAssetId;
@@ -98,8 +102,6 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   protected $universalAdIdType = 'Google_Service_Dfareporting_UniversalAdId';
   protected $universalAdIdDataType = '';
   public $version;
-  public $videoDescription;
-  public $videoDuration;
 
   public function setAccountId($accountId)
   {
@@ -132,6 +134,20 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public function getAdTagKeys()
   {
     return $this->adTagKeys;
+  }
+  /**
+   * @param Google_Service_Dfareporting_Size
+   */
+  public function setAdditionalSizes($additionalSizes)
+  {
+    $this->additionalSizes = $additionalSizes;
+  }
+  /**
+   * @return Google_Service_Dfareporting_Size
+   */
+  public function getAdditionalSizes()
+  {
+    return $this->additionalSizes;
   }
   public function setAdvertiserId($advertiserId)
   {
@@ -455,6 +471,22 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   {
     return $this->latestTraffickedCreativeId;
   }
+  public function setMediaDescription($mediaDescription)
+  {
+    $this->mediaDescription = $mediaDescription;
+  }
+  public function getMediaDescription()
+  {
+    return $this->mediaDescription;
+  }
+  public function setMediaDuration($mediaDuration)
+  {
+    $this->mediaDuration = $mediaDuration;
+  }
+  public function getMediaDuration()
+  {
+    return $this->mediaDuration;
+  }
   public function setName($name)
   {
     $this->name = $name;
@@ -704,21 +736,5 @@ class Google_Service_Dfareporting_Creative extends Google_Collection
   public function getVersion()
   {
     return $this->version;
-  }
-  public function setVideoDescription($videoDescription)
-  {
-    $this->videoDescription = $videoDescription;
-  }
-  public function getVideoDescription()
-  {
-    return $this->videoDescription;
-  }
-  public function setVideoDuration($videoDuration)
-  {
-    $this->videoDuration = $videoDuration;
-  }
-  public function getVideoDuration()
-  {
-    return $this->videoDuration;
   }
 }

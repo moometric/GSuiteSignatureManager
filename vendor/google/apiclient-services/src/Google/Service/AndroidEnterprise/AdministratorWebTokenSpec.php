@@ -21,6 +21,14 @@ class Google_Service_AndroidEnterprise_AdministratorWebTokenSpec extends Google_
   public $kind;
   public $parent;
   public $permission;
+  protected $playSearchType = 'Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPlaySearch';
+  protected $playSearchDataType = '';
+  protected $privateAppsType = 'Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPrivateApps';
+  protected $privateAppsDataType = '';
+  protected $storeBuilderType = 'Google_Service_AndroidEnterprise_AdministratorWebTokenSpecStoreBuilder';
+  protected $storeBuilderDataType = '';
+  protected $webAppsType = 'Google_Service_AndroidEnterprise_AdministratorWebTokenSpecWebApps';
+  protected $webAppsDataType = '';
 
   public function setKind($kind)
   {
@@ -45,5 +53,61 @@ class Google_Service_AndroidEnterprise_AdministratorWebTokenSpec extends Google_
   public function getPermission()
   {
     return $this->permission;
+  }
+  /**
+   * @param Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPlaySearch
+   */
+  public function setPlaySearch(Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPlaySearch $playSearch)
+  {
+    $this->playSearch = $playSearch;
+  }
+  /**
+   * @return Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPlaySearch
+   */
+  public function getPlaySearch()
+  {
+    return $this->playSearch;
+  }
+  /**
+   * @param Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPrivateApps
+   */
+  public function setPrivateApps(Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPrivateApps $privateApps)
+  {
+    $this->privateApps = $privateApps;
+  }
+  /**
+   * @return Google_Service_AndroidEnterprise_AdministratorWebTokenSpecPrivateApps
+   */
+  public function getPrivateApps()
+  {
+    return $this->privateApps;
+  }
+  /**
+   * @param Google_Service_AndroidEnterprise_AdministratorWebTokenSpecStoreBuilder
+   */
+  public function setStoreBuilder(Google_Service_AndroidEnterprise_AdministratorWebTokenSpecStoreBuilder $storeBuilder)
+  {
+    $this->storeBuilder = $storeBuilder;
+  }
+  /**
+   * @return Google_Service_AndroidEnterprise_AdministratorWebTokenSpecStoreBuilder
+   */
+  public function getStoreBuilder()
+  {
+    return $this->storeBuilder;
+  }
+  /**
+   * @param Google_Service_AndroidEnterprise_AdministratorWebTokenSpecWebApps
+   */
+  public function setWebApps(Google_Service_AndroidEnterprise_AdministratorWebTokenSpecWebApps $webApps)
+  {
+    $this->webApps = $webApps;
+  }
+  /**
+   * @return Google_Service_AndroidEnterprise_AdministratorWebTokenSpecWebApps
+   */
+  public function getWebApps()
+  {
+    return $this->webApps;
   }
 }

@@ -20,6 +20,7 @@ class Google_Service_ShoppingContent_TestOrder extends Google_Collection
   protected $collection_key = 'promotions';
   protected $customerType = 'Google_Service_ShoppingContent_TestOrderCustomer';
   protected $customerDataType = '';
+  public $enableOrderinvoices;
   public $kind;
   protected $lineItemsType = 'Google_Service_ShoppingContent_TestOrderLineItem';
   protected $lineItemsDataType = 'array';
@@ -48,6 +49,14 @@ class Google_Service_ShoppingContent_TestOrder extends Google_Collection
   public function getCustomer()
   {
     return $this->customer;
+  }
+  public function setEnableOrderinvoices($enableOrderinvoices)
+  {
+    $this->enableOrderinvoices = $enableOrderinvoices;
+  }
+  public function getEnableOrderinvoices()
+  {
+    return $this->enableOrderinvoices;
   }
   public function setKind($kind)
   {

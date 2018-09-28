@@ -19,7 +19,8 @@
  * Service definition for PolyService (v1).
  *
  * <p>
- * The Poly API provides read-only access to assets hosted on poly.google.com.</p>
+ * The Poly API provides read access to assets hosted on poly.google.com to all,
+ * and upload access to poly.google.com for whitelisted accounts.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -69,18 +70,6 @@ class Google_Service_PolyService extends Google_Service
               'path' => 'v1/assets',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxComplexity' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'keywords' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -100,6 +89,18 @@ class Google_Service_PolyService extends Google_Service
                 'category' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'maxComplexity' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -161,19 +162,19 @@ class Google_Service_PolyService extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'orderBy' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
                 ),
                 'format' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'orderBy' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

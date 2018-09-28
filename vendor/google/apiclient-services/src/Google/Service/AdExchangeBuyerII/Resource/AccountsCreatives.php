@@ -33,7 +33,6 @@ class Google_Service_AdExchangeBuyerII_Resource_AccountsCreatives extends Google
    * @param Google_Service_AdExchangeBuyerII_Creative $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string accountId1 The account the creative belongs to.
    * @opt_param string duplicateIdMode Indicates if multiple creatives can share
    * an ID or not. Default is NO_DUPLICATES (one ID per creative).
    * @return Google_Service_AdExchangeBuyerII_Creative
@@ -122,8 +121,6 @@ class Google_Service_AdExchangeBuyerII_Resource_AccountsCreatives extends Google
    * be used to filter the response of the creatives.list method.
    * @param Google_Service_AdExchangeBuyerII_Creative $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param string accountId1 The account the creative belongs to.
    * @return Google_Service_AdExchangeBuyerII_Creative
    */
   public function update($accountId, $creativeId, Google_Service_AdExchangeBuyerII_Creative $postBody, $optParams = array())

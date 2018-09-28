@@ -20,6 +20,7 @@ class Google_Service_CloudBuild_BuildOptions extends Google_Collection
   protected $collection_key = 'sourceProvenanceHash';
   public $diskSizeGb;
   public $logStreamingOption;
+  public $logging;
   public $machineType;
   public $requestedVerifyOption;
   public $sourceProvenanceHash;
@@ -40,6 +41,14 @@ class Google_Service_CloudBuild_BuildOptions extends Google_Collection
   public function getLogStreamingOption()
   {
     return $this->logStreamingOption;
+  }
+  public function setLogging($logging)
+  {
+    $this->logging = $logging;
+  }
+  public function getLogging()
+  {
+    return $this->logging;
   }
   public function setMachineType($machineType)
   {

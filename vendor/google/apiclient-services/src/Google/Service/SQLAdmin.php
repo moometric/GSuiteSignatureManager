@@ -19,8 +19,8 @@
  * Service definition for SQLAdmin (v1beta4).
  *
  * <p>
- * Creates and configures Cloud SQL instances, which provide fully-managed MySQL
- * databases.</p>
+ * Creates and manages Cloud SQL instances, which provide fully managed MySQL or
+ * PostgreSQL databases.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -293,7 +293,22 @@ class Google_Service_SQLAdmin extends Google_Service
         'instances',
         array(
           'methods' => array(
-            'clone' => array(
+            'addServerCa' => array(
+              'path' => 'projects/{project}/instances/{instance}/addServerCa',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'instance' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'clone' => array(
               'path' => 'projects/{project}/instances/{instance}/clone',
               'httpMethod' => 'POST',
               'parameters' => array(
@@ -430,6 +445,21 @@ class Google_Service_SQLAdmin extends Google_Service
                   'type' => 'string',
                 ),
               ),
+            ),'listServerCas' => array(
+              'path' => 'projects/{project}/instances/{instance}/listServerCas',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'instance' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
             ),'patch' => array(
               'path' => 'projects/{project}/instances/{instance}',
               'httpMethod' => 'PATCH',
@@ -492,6 +522,21 @@ class Google_Service_SQLAdmin extends Google_Service
               ),
             ),'restoreBackup' => array(
               'path' => 'projects/{project}/instances/{instance}/restoreBackup',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'instance' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'rotateServerCa' => array(
+              'path' => 'projects/{project}/instances/{instance}/rotateServerCa',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'project' => array(
@@ -807,15 +852,14 @@ class Google_Service_SQLAdmin extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'host' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
                 'name' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'required' => true,
+                ),
+                'host' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),

@@ -21,6 +21,8 @@ class Google_Service_Sheets_Response extends Google_Model
   protected $addBandingDataType = '';
   protected $addChartType = 'Google_Service_Sheets_AddChartResponse';
   protected $addChartDataType = '';
+  protected $addDimensionGroupType = 'Google_Service_Sheets_AddDimensionGroupResponse';
+  protected $addDimensionGroupDataType = '';
   protected $addFilterViewType = 'Google_Service_Sheets_AddFilterViewResponse';
   protected $addFilterViewDataType = '';
   protected $addNamedRangeType = 'Google_Service_Sheets_AddNamedRangeResponse';
@@ -35,6 +37,8 @@ class Google_Service_Sheets_Response extends Google_Model
   protected $deleteConditionalFormatRuleDataType = '';
   protected $deleteDeveloperMetadataType = 'Google_Service_Sheets_DeleteDeveloperMetadataResponse';
   protected $deleteDeveloperMetadataDataType = '';
+  protected $deleteDimensionGroupType = 'Google_Service_Sheets_DeleteDimensionGroupResponse';
+  protected $deleteDimensionGroupDataType = '';
   protected $duplicateFilterViewType = 'Google_Service_Sheets_DuplicateFilterViewResponse';
   protected $duplicateFilterViewDataType = '';
   protected $duplicateSheetType = 'Google_Service_Sheets_DuplicateSheetResponse';
@@ -75,6 +79,20 @@ class Google_Service_Sheets_Response extends Google_Model
   public function getAddChart()
   {
     return $this->addChart;
+  }
+  /**
+   * @param Google_Service_Sheets_AddDimensionGroupResponse
+   */
+  public function setAddDimensionGroup(Google_Service_Sheets_AddDimensionGroupResponse $addDimensionGroup)
+  {
+    $this->addDimensionGroup = $addDimensionGroup;
+  }
+  /**
+   * @return Google_Service_Sheets_AddDimensionGroupResponse
+   */
+  public function getAddDimensionGroup()
+  {
+    return $this->addDimensionGroup;
   }
   /**
    * @param Google_Service_Sheets_AddFilterViewResponse
@@ -173,6 +191,20 @@ class Google_Service_Sheets_Response extends Google_Model
   public function getDeleteDeveloperMetadata()
   {
     return $this->deleteDeveloperMetadata;
+  }
+  /**
+   * @param Google_Service_Sheets_DeleteDimensionGroupResponse
+   */
+  public function setDeleteDimensionGroup(Google_Service_Sheets_DeleteDimensionGroupResponse $deleteDimensionGroup)
+  {
+    $this->deleteDimensionGroup = $deleteDimensionGroup;
+  }
+  /**
+   * @return Google_Service_Sheets_DeleteDimensionGroupResponse
+   */
+  public function getDeleteDimensionGroup()
+  {
+    return $this->deleteDimensionGroup;
   }
   /**
    * @param Google_Service_Sheets_DuplicateFilterViewResponse

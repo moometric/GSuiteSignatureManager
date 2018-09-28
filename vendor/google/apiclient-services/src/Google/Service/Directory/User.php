@@ -21,6 +21,7 @@ class Google_Service_Directory_User extends Google_Collection
   public $addresses;
   public $agreedToTerms;
   public $aliases;
+  public $archived;
   public $changePasswordAtNextLogin;
   public $creationTime;
   public $customSchemas;
@@ -86,6 +87,14 @@ class Google_Service_Directory_User extends Google_Collection
   public function getAliases()
   {
     return $this->aliases;
+  }
+  public function setArchived($archived)
+  {
+    $this->archived = $archived;
+  }
+  public function getArchived()
+  {
+    return $this->archived;
   }
   public function setChangePasswordAtNextLogin($changePasswordAtNextLogin)
   {

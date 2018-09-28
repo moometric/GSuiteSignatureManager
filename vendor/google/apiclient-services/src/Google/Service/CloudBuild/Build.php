@@ -18,6 +18,8 @@
 class Google_Service_CloudBuild_Build extends Google_Collection
 {
   protected $collection_key = 'tags';
+  protected $artifactsType = 'Google_Service_CloudBuild_Artifacts';
+  protected $artifactsDataType = '';
   public $buildTriggerId;
   public $createTime;
   public $finishTime;
@@ -47,6 +49,20 @@ class Google_Service_CloudBuild_Build extends Google_Collection
   protected $timingType = 'Google_Service_CloudBuild_TimeSpan';
   protected $timingDataType = 'map';
 
+  /**
+   * @param Google_Service_CloudBuild_Artifacts
+   */
+  public function setArtifacts(Google_Service_CloudBuild_Artifacts $artifacts)
+  {
+    $this->artifacts = $artifacts;
+  }
+  /**
+   * @return Google_Service_CloudBuild_Artifacts
+   */
+  public function getArtifacts()
+  {
+    return $this->artifacts;
+  }
   public function setBuildTriggerId($buildTriggerId)
   {
     $this->buildTriggerId = $buildTriggerId;

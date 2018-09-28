@@ -53,10 +53,13 @@ class Google_Service_Directory_Resource_Members extends Google_Service_Resource
     return $this->call('get', array($params), "Google_Service_Directory_Member");
   }
   /**
-   * Checks Membership of an user within a Group (members.hasMember)
+   * Checks whether the given user is a member of the group. Membership can be
+   * direct or nested. (members.hasMember)
    *
-   * @param string $groupKey Email or immutable Id of the group
-   * @param string $memberKey Email or immutable Id of the member
+   * @param string $groupKey Identifies the group in the API request. The value
+   * can be the group's email address, group alias, or the unique group ID.
+   * @param string $memberKey Identifies the user member in the API request. The
+   * value can be the user's primary email address, alias, or unique ID.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Directory_MembersHasMember
    */
@@ -86,6 +89,8 @@ class Google_Service_Directory_Resource_Members extends Google_Service_Resource
    * @param string $groupKey Email or immutable ID of the group
    * @param array $optParams Optional parameters.
    *
+   * @opt_param bool includeDerivedMembership Whether to list indirect
+   * memberships. Default: false.
    * @opt_param int maxResults Maximum number of results to return. Default is 200
    * @opt_param string pageToken Token to specify next page in the list
    * @opt_param string roles Comma separated role values to filter list results

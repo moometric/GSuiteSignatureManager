@@ -28,10 +28,6 @@ class Google_Service_Genomics_Resource_ReferencesBases extends Google_Service_Re
   /**
    * Lists the bases in a reference, optionally restricted to a range.
    *
-   * For the definitions of references and other genomics resources, see
-   * [Fundamentals of Google Genomics](https://cloud.google.com/genomics
-   * /fundamentals-of-google-genomics)
-   *
    * Implements [GlobalAllianceApi.getReferenceBases](https://github.com/ga4gh/sch
    * emas/blob/v0.5.1/src/main/resources/avro/referencemethods.avdl#L221).
    * (bases.listReferencesBases)
@@ -39,6 +35,8 @@ class Google_Service_Genomics_Resource_ReferencesBases extends Google_Service_Re
    * @param string $referenceId The ID of the reference.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string end The end position (0-based, exclusive) of this query.
+   * Defaults to the length of this reference.
    * @opt_param string pageToken The continuation token, which is used to page
    * through large result sets. To get the next page of results, set this
    * parameter to the value of `nextPageToken` from the previous response.
@@ -47,8 +45,6 @@ class Google_Service_Genomics_Resource_ReferencesBases extends Google_Service_Re
    * is 10Mbp (mega base pairs).
    * @opt_param string start The start position (0-based) of this query. Defaults
    * to 0.
-   * @opt_param string end The end position (0-based, exclusive) of this query.
-   * Defaults to the length of this reference.
    * @return Google_Service_Genomics_ListBasesResponse
    */
   public function listReferencesBases($referenceId, $optParams = array())

@@ -94,8 +94,10 @@ class Google_Service_Directory_Resource_ResourcesCalendars extends Google_Servic
    * @opt_param string query String query used to filter results. Should be of the
    * form "field operator value" where field can be any of supported fields and
    * operators can be any of supported operations. Operators include '=' for exact
-   * match and ':' for prefix match where applicable. For prefix match, the value
-   * should always be followed by a *.
+   * match and ':' for prefix match or HAS match where applicable. For prefix
+   * match, the value should always be followed by a *. Supported fields include
+   * generatedResourceName, name, buildingId, featureInstances.feature.name. For
+   * example buildingId=US-NYC-9TH AND featureInstances.feature.name:Phone.
    * @return Google_Service_Directory_CalendarResources
    */
   public function listResourcesCalendars($customer, $optParams = array())

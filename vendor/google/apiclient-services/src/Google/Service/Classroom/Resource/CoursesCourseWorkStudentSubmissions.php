@@ -70,12 +70,6 @@ class Google_Service_Classroom_Resource_CoursesCourseWorkStudentSubmissions exte
    * work in the specified course.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string states Requested submission states. If specified, returned
-   * student submissions match one of the specified submission states.
-   * @opt_param int pageSize Maximum number of items to return. Zero or
-   * unspecified indicates that the server may assign a maximum.
-   *
-   * The server may return fewer than the specified number of results.
    * @opt_param string userId Optional argument to restrict returned student work
    * to those owned by the student with the specified identifier. The identifier
    * can be one of the following:
@@ -90,6 +84,12 @@ class Google_Service_Classroom_Resource_CoursesCourseWorkStudentSubmissions exte
    *
    * The list request must be otherwise identical to the one that resulted in this
    * token.
+   * @opt_param int pageSize Maximum number of items to return. Zero or
+   * unspecified indicates that the server may assign a maximum.
+   *
+   * The server may return fewer than the specified number of results.
+   * @opt_param string states Requested submission states. If specified, returned
+   * student submissions match one of the specified submission states.
    * @return Google_Service_Classroom_ListStudentSubmissionsResponse
    */
   public function listCoursesCourseWorkStudentSubmissions($courseId, $courseWorkId, $optParams = array())

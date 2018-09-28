@@ -73,7 +73,8 @@ class Google_Service_Genomics_Resource_Operations extends Google_Service_Resourc
    * to determine if a   particular event has occurred. * error If the pipeline is
    * running, this value is NULL.  Once the   pipeline finishes, the value is the
    * standard Google error code. * labels.key or labels."key with space" where key
-   * is a label key.
+   * is a label key. * done If the pipeline is running, this value is false. Once
+   * the   pipeline finishes, the value is true.
    *
    * In v1 and v1alpha2, the following filter fields are supported
    *

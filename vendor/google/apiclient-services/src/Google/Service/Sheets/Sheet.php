@@ -17,13 +17,15 @@
 
 class Google_Service_Sheets_Sheet extends Google_Collection
 {
-  protected $collection_key = 'protectedRanges';
+  protected $collection_key = 'rowGroups';
   protected $bandedRangesType = 'Google_Service_Sheets_BandedRange';
   protected $bandedRangesDataType = 'array';
   protected $basicFilterType = 'Google_Service_Sheets_BasicFilter';
   protected $basicFilterDataType = '';
   protected $chartsType = 'Google_Service_Sheets_EmbeddedChart';
   protected $chartsDataType = 'array';
+  protected $columnGroupsType = 'Google_Service_Sheets_DimensionGroup';
+  protected $columnGroupsDataType = 'array';
   protected $conditionalFormatsType = 'Google_Service_Sheets_ConditionalFormatRule';
   protected $conditionalFormatsDataType = 'array';
   protected $dataType = 'Google_Service_Sheets_GridData';
@@ -38,6 +40,8 @@ class Google_Service_Sheets_Sheet extends Google_Collection
   protected $propertiesDataType = '';
   protected $protectedRangesType = 'Google_Service_Sheets_ProtectedRange';
   protected $protectedRangesDataType = 'array';
+  protected $rowGroupsType = 'Google_Service_Sheets_DimensionGroup';
+  protected $rowGroupsDataType = 'array';
 
   /**
    * @param Google_Service_Sheets_BandedRange
@@ -80,6 +84,20 @@ class Google_Service_Sheets_Sheet extends Google_Collection
   public function getCharts()
   {
     return $this->charts;
+  }
+  /**
+   * @param Google_Service_Sheets_DimensionGroup
+   */
+  public function setColumnGroups($columnGroups)
+  {
+    $this->columnGroups = $columnGroups;
+  }
+  /**
+   * @return Google_Service_Sheets_DimensionGroup
+   */
+  public function getColumnGroups()
+  {
+    return $this->columnGroups;
   }
   /**
    * @param Google_Service_Sheets_ConditionalFormatRule
@@ -178,5 +196,19 @@ class Google_Service_Sheets_Sheet extends Google_Collection
   public function getProtectedRanges()
   {
     return $this->protectedRanges;
+  }
+  /**
+   * @param Google_Service_Sheets_DimensionGroup
+   */
+  public function setRowGroups($rowGroups)
+  {
+    $this->rowGroups = $rowGroups;
+  }
+  /**
+   * @return Google_Service_Sheets_DimensionGroup
+   */
+  public function getRowGroups()
+  {
+    return $this->rowGroups;
   }
 }

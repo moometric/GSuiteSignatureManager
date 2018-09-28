@@ -90,6 +90,23 @@ class Google_Service_ShoppingContent_Resource_Orders extends Google_Service_Reso
     return $this->call('cancellineitem', array($params), "Google_Service_ShoppingContent_OrdersCancelLineItemResponse");
   }
   /**
+   * Sandbox only. Cancels a test order for customer-initiated cancellation.
+   * (orders.canceltestorderbycustomer)
+   *
+   * @param string $merchantId The ID of the account that manages the order. This
+   * cannot be a multi-client account.
+   * @param string $orderId The ID of the test order to cancel.
+   * @param Google_Service_ShoppingContent_OrdersCancelTestOrderByCustomerRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_ShoppingContent_OrdersCancelTestOrderByCustomerResponse
+   */
+  public function canceltestorderbycustomer($merchantId, $orderId, Google_Service_ShoppingContent_OrdersCancelTestOrderByCustomerRequest $postBody, $optParams = array())
+  {
+    $params = array('merchantId' => $merchantId, 'orderId' => $orderId, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('canceltestorderbycustomer', array($params), "Google_Service_ShoppingContent_OrdersCancelTestOrderByCustomerResponse");
+  }
+  /**
    * Sandbox only. Creates a test order. (orders.createtestorder)
    *
    * @param string $merchantId The ID of the account that should manage the order.
@@ -156,6 +173,9 @@ class Google_Service_ShoppingContent_Resource_Orders extends Google_Service_Reso
    * This cannot be a multi-client account.
    * @param string $templateName The name of the template to retrieve.
    * @param array $optParams Optional parameters.
+   *
+   * @opt_param string country The country of the template to retrieve. Defaults
+   * to US.
    * @return Google_Service_ShoppingContent_OrdersGetTestOrderTemplateResponse
    */
   public function gettestordertemplate($merchantId, $templateName, $optParams = array())
@@ -165,7 +185,8 @@ class Google_Service_ShoppingContent_Resource_Orders extends Google_Service_Reso
     return $this->call('gettestordertemplate', array($params), "Google_Service_ShoppingContent_OrdersGetTestOrderTemplateResponse");
   }
   /**
-   * Notifies that item return and refund was handled directly in store.
+   * Notifies that item return and refund was handled directly by merchant outside
+   * of Google payments processing (e.g. cash refund done in store).
    * (orders.instorerefundlineitem)
    *
    * @param string $merchantId The ID of the account that manages the order. This
@@ -222,7 +243,7 @@ class Google_Service_ShoppingContent_Resource_Orders extends Google_Service_Reso
     return $this->call('list', array($params), "Google_Service_ShoppingContent_OrdersListResponse");
   }
   /**
-   * Refund a portion of the order, up to the full amount paid. (orders.refund)
+   * Deprecated, please use returnRefundLineItem instead. (orders.refund)
    *
    * @param string $merchantId The ID of the account that manages the order. This
    * cannot be a multi-client account.

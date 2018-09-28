@@ -70,7 +70,7 @@ class Google_Service_Directory_Resource_Chromeosdevices extends Google_Service_R
    * @opt_param string projection Restrict information returned to a set of
    * selected fields.
    * @opt_param string query Search string in the format given at
-   * http://support.google.com/chromeos/a/bin/answer.py?hl=en=1698333
+   * http://support.google.com/chromeos/a/bin/answer.py?answer=1698333
    * @opt_param string sortOrder Whether to return results in ascending or
    * descending order. Only of use when orderBy is also used
    * @return Google_Service_Directory_ChromeOsDevices

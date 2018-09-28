@@ -30,7 +30,7 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
    *
    * @param string $parent The BigQuery project id where the transfer
    * configuration should be created. Must be in the format
-   * /projects/{project_id}/locations/{location_id} If specified location and
+   * projects/{project_id}/locations/{location_id} If specified location and
    * location of the destination bigquery dataset do not match - the request will
    * fail.
    * @param Google_Service_BigQueryDataTransfer_TransferConfig $postBody
@@ -123,8 +123,6 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
    * @param Google_Service_BigQueryDataTransfer_TransferConfig $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask Required list of fields to be updated in this
-   * request.
    * @opt_param string authorizationCode Optional OAuth2 authorization code to use
    * with this transfer configuration. If it is provided, the transfer
    * configuration will be associated with the authorizing user. In order to
@@ -140,6 +138,8 @@ class Google_Service_BigQueryDataTransfer_Resource_ProjectsTransferConfigs exten
    * authorization code should be   returned in the title bar of the browser, with
    * the page text prompting   the user to copy the code and paste it in the
    * application.
+   * @opt_param string updateMask Required list of fields to be updated in this
+   * request.
    * @return Google_Service_BigQueryDataTransfer_TransferConfig
    */
   public function patch($name, Google_Service_BigQueryDataTransfer_TransferConfig $postBody, $optParams = array())

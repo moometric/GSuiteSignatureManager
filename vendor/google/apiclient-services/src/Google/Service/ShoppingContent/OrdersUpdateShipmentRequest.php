@@ -18,6 +18,7 @@
 class Google_Service_ShoppingContent_OrdersUpdateShipmentRequest extends Google_Model
 {
   public $carrier;
+  public $deliveryDate;
   public $operationId;
   public $shipmentId;
   public $status;
@@ -30,6 +31,14 @@ class Google_Service_ShoppingContent_OrdersUpdateShipmentRequest extends Google_
   public function getCarrier()
   {
     return $this->carrier;
+  }
+  public function setDeliveryDate($deliveryDate)
+  {
+    $this->deliveryDate = $deliveryDate;
+  }
+  public function getDeliveryDate()
+  {
+    return $this->deliveryDate;
   }
   public function setOperationId($operationId)
   {

@@ -26,12 +26,18 @@
 class Google_Service_Pubsub_Resource_ProjectsSnapshots extends Google_Service_Resource
 {
   /**
-   * Creates a snapshot from the requested subscription. If the snapshot already
-   * exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't
-   * exist, returns `NOT_FOUND`. If the backlog in the subscription is too old --
-   * and the resulting snapshot would expire in less than 1 hour -- then
-   * `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field.
+   * Creates a snapshot from the requested subscription. Snapshots are used in
+   * Seek operations, which allow you to manage message acknowledgments in bulk.
+   * That is, you can set the acknowledgment state of messages in an existing
+   * subscription to the state captured by a snapshot.
    *
+   * BETA: This feature is part of a beta release. This API might be changed in
+   * backward-incompatible ways and is not recommended for production use. It is
+   * not subject to any SLA or deprecation policy. If the snapshot already exists,
+   * returns `ALREADY_EXISTS`. If the requested subscription doesn't exist,
+   * returns `NOT_FOUND`. If the backlog in the subscription is too old -- and the
+   * resulting snapshot would expire in less than 1 hour -- then
+   * `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field.
    * If the name is not provided in the request, the server will assign a random
    * name for this snapshot on the same project as the subscription, conforming to
    * the [resource name
@@ -42,7 +48,7 @@ class Google_Service_Pubsub_Resource_ProjectsSnapshots extends Google_Service_Re
    * @param string $name Optional user-provided name for this snapshot. If the
    * name is not provided in the request, the server will assign a random name for
    * this snapshot on the same project as the subscription. Note that for REST API
-   * requests, you must specify a name. Format is
+   * requests, you must specify a name.  See the resource name rules. Format is
    * `projects/{project}/snapshots/{snap}`.
    * @param Google_Service_Pubsub_CreateSnapshotRequest $postBody
    * @param array $optParams Optional parameters.
@@ -55,11 +61,16 @@ class Google_Service_Pubsub_Resource_ProjectsSnapshots extends Google_Service_Re
     return $this->call('create', array($params), "Google_Service_Pubsub_Snapshot");
   }
   /**
-   * Removes an existing snapshot. All messages retained in the snapshot are
-   * immediately dropped. After a snapshot is deleted, a new one may be created
-   * with the same name, but the new one has no association with the old snapshot
-   * or its subscription, unless the same subscription is specified.
-   * (snapshots.delete)
+   * Removes an existing snapshot. Snapshots are used in Seek operations, which
+   * allow you to manage message acknowledgments in bulk. That is, you can set the
+   * acknowledgment state of messages in an existing subscription to the state
+   * captured by a snapshot. BETA: This feature is part of a beta release. This
+   * API might be changed in backward-incompatible ways and is not recommended for
+   * production use. It is not subject to any SLA or deprecation policy. When the
+   * snapshot is deleted, all messages retained in the snapshot are immediately
+   * dropped. After a snapshot is deleted, a new one may be created with the same
+   * name, but the new one has no association with the old snapshot or its
+   * subscription, unless the same subscription is specified. (snapshots.delete)
    *
    * @param string $snapshot The name of the snapshot to delete. Format is
    * `projects/{project}/snapshots/{snap}`.
@@ -73,7 +84,13 @@ class Google_Service_Pubsub_Resource_ProjectsSnapshots extends Google_Service_Re
     return $this->call('delete', array($params), "Google_Service_Pubsub_PubsubEmpty");
   }
   /**
-   * Gets the configuration details of a snapshot. (snapshots.get)
+   * Gets the configuration details of a snapshot. Snapshots are used in Seek
+   * operations, which allow you to manage message acknowledgments in bulk. That
+   * is, you can set the acknowledgment state of messages in an existing
+   * subscription to the state captured by a snapshot. BETA: This feature is part
+   * of a beta release. This API might be changed in backward-incompatible ways
+   * and is not recommended for production use. It is not subject to any SLA or
+   * deprecation policy. (snapshots.get)
    *
    * @param string $snapshot The name of the snapshot to get. Format is
    * `projects/{project}/snapshots/{snap}`.
@@ -103,10 +120,16 @@ class Google_Service_Pubsub_Resource_ProjectsSnapshots extends Google_Service_Re
     return $this->call('getIamPolicy', array($params), "Google_Service_Pubsub_Policy");
   }
   /**
-   * Lists the existing snapshots. (snapshots.listProjectsSnapshots)
+   * Lists the existing snapshots. Snapshots are used in Seek operations, which
+   * allow you to manage message acknowledgments in bulk. That is, you can set the
+   * acknowledgment state of messages in an existing subscription to the state
+   * captured by a snapshot. BETA: This feature is part of a beta release. This
+   * API might be changed in backward-incompatible ways and is not recommended for
+   * production use. It is not subject to any SLA or deprecation policy.
+   * (snapshots.listProjectsSnapshots)
    *
-   * @param string $project The name of the cloud project that snapshots belong
-   * to. Format is `projects/{project}`.
+   * @param string $project The name of the project in which to list snapshots.
+   * Format is `projects/{project-id}`.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken The value returned by the last
@@ -123,8 +146,13 @@ class Google_Service_Pubsub_Resource_ProjectsSnapshots extends Google_Service_Re
     return $this->call('list', array($params), "Google_Service_Pubsub_ListSnapshotsResponse");
   }
   /**
-   * Updates an existing snapshot. Note that certain properties of a snapshot are
-   * not modifiable. (snapshots.patch)
+   * Updates an existing snapshot. Snapshots are used in Seek operations, which
+   * allow you to manage message acknowledgments in bulk. That is, you can set the
+   * acknowledgment state of messages in an existing subscription to the state
+   * captured by a snapshot. BETA: This feature is part of a beta release. This
+   * API might be changed in backward-incompatible ways and is not recommended for
+   * production use. It is not subject to any SLA or deprecation policy. Note that
+   * certain properties of a snapshot are not modifiable. (snapshots.patch)
    *
    * @param string $name The name of the snapshot.
    * @param Google_Service_Pubsub_UpdateSnapshotRequest $postBody

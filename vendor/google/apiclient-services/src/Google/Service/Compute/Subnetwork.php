@@ -20,6 +20,8 @@ class Google_Service_Compute_Subnetwork extends Google_Collection
   protected $collection_key = 'secondaryIpRanges';
   public $creationTimestamp;
   public $description;
+  public $enableFlowLogs;
+  public $fingerprint;
   public $gatewayAddress;
   public $id;
   public $ipCidrRange;
@@ -47,6 +49,22 @@ class Google_Service_Compute_Subnetwork extends Google_Collection
   public function getDescription()
   {
     return $this->description;
+  }
+  public function setEnableFlowLogs($enableFlowLogs)
+  {
+    $this->enableFlowLogs = $enableFlowLogs;
+  }
+  public function getEnableFlowLogs()
+  {
+    return $this->enableFlowLogs;
+  }
+  public function setFingerprint($fingerprint)
+  {
+    $this->fingerprint = $fingerprint;
+  }
+  public function getFingerprint()
+  {
+    return $this->fingerprint;
   }
   public function setGatewayAddress($gatewayAddress)
   {

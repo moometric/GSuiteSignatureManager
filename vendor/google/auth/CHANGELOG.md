@@ -1,3 +1,38 @@
+## 1.4.0 (09/17/2018)
+
+### Changes
+
+ * Add support for insecure credentials (#208)
+
+## 1.3.3 (08/27/2018)
+
+### Changes
+
+ * Add retry and increase timeout for GCE credentials (#195)
+ * [Docs] Fix spelling (#204)
+ * Update token url (#206)
+
+## 1.3.2 (07/23/2018)
+
+### Changes
+
+ * Only emits a warning for gcloud credentials (#202)
+
+## 1.3.1 (07/19/2018)
+
+### Changes
+
+ * Added a warning for 3 legged OAuth credentials (#199)
+ * [Code cleanup] Removed useless else after return (#193)
+
+## 1.3.0 (06/04/2018)
+
+### Changes
+
+ * Fixes usage of deprecated env var for GAE Flex (#189)
+ * fix - guzzlehttp/psr7 dependency version definition (#190)
+ * Added SystemV shared memory based CacheItemPool (#191)
+
 ## 1.2.1 (24/01/2018)
 
 ### Changes

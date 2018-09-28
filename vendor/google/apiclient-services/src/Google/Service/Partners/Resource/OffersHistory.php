@@ -31,17 +31,10 @@ class Google_Service_Partners_Resource_OffersHistory extends Google_Service_Reso
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string requestMetadata.trafficSource.trafficSourceId Identifier to
-   * indicate where the traffic comes from. An identifier has multiple letters
-   * created by a team which redirected the traffic to us.
-   * @opt_param string requestMetadata.locale Locale to use for the current
-   * request.
-   * @opt_param string requestMetadata.userOverrides.ipAddress IP address to use
-   * instead of the user's geo-located IP address.
-   * @opt_param bool entireCompany if true, show history for the entire company.
-   * Requires user to be admin.
    * @opt_param string requestMetadata.experimentIds Experiment IDs the current
    * request belongs to.
+   * @opt_param bool entireCompany if true, show history for the entire company.
+   * Requires user to be admin.
    * @opt_param string orderBy Comma-separated list of fields to order by, e.g.:
    * "foo,bar,baz". Use "foo desc" to sort descending. List of valid field names
    * is: name, offer_code, expiration_time, status,     last_modified_time,
@@ -55,6 +48,13 @@ class Google_Service_Partners_Resource_OffersHistory extends Google_Service_Reso
    * ID.
    * @opt_param string pageToken Token to retrieve a specific page.
    * @opt_param int pageSize Maximum number of rows to return per page.
+   * @opt_param string requestMetadata.trafficSource.trafficSourceId Identifier to
+   * indicate where the traffic comes from. An identifier has multiple letters
+   * created by a team which redirected the traffic to us.
+   * @opt_param string requestMetadata.locale Locale to use for the current
+   * request.
+   * @opt_param string requestMetadata.userOverrides.ipAddress IP address to use
+   * instead of the user's geo-located IP address.
    * @return Google_Service_Partners_ListOffersHistoryResponse
    */
   public function listOffersHistory($optParams = array())

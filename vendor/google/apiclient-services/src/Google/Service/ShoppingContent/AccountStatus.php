@@ -17,13 +17,15 @@
 
 class Google_Service_ShoppingContent_AccountStatus extends Google_Collection
 {
-  protected $collection_key = 'dataQualityIssues';
+  protected $collection_key = 'products';
   public $accountId;
   protected $accountLevelIssuesType = 'Google_Service_ShoppingContent_AccountStatusAccountLevelIssue';
   protected $accountLevelIssuesDataType = 'array';
   protected $dataQualityIssuesType = 'Google_Service_ShoppingContent_AccountStatusDataQualityIssue';
   protected $dataQualityIssuesDataType = 'array';
   public $kind;
+  protected $productsType = 'Google_Service_ShoppingContent_AccountStatusProducts';
+  protected $productsDataType = 'array';
   public $websiteClaimed;
 
   public function setAccountId($accountId)
@@ -69,6 +71,20 @@ class Google_Service_ShoppingContent_AccountStatus extends Google_Collection
   public function getKind()
   {
     return $this->kind;
+  }
+  /**
+   * @param Google_Service_ShoppingContent_AccountStatusProducts
+   */
+  public function setProducts($products)
+  {
+    $this->products = $products;
+  }
+  /**
+   * @return Google_Service_ShoppingContent_AccountStatusProducts
+   */
+  public function getProducts()
+  {
+    return $this->products;
   }
   public function setWebsiteClaimed($websiteClaimed)
   {

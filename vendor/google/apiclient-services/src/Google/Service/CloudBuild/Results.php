@@ -18,10 +18,21 @@
 class Google_Service_CloudBuild_Results extends Google_Collection
 {
   protected $collection_key = 'images';
+  public $artifactManifest;
   public $buildStepImages;
+  public $buildStepOutputs;
   protected $imagesType = 'Google_Service_CloudBuild_BuiltImage';
   protected $imagesDataType = 'array';
+  public $numArtifacts;
 
+  public function setArtifactManifest($artifactManifest)
+  {
+    $this->artifactManifest = $artifactManifest;
+  }
+  public function getArtifactManifest()
+  {
+    return $this->artifactManifest;
+  }
   public function setBuildStepImages($buildStepImages)
   {
     $this->buildStepImages = $buildStepImages;
@@ -29,6 +40,14 @@ class Google_Service_CloudBuild_Results extends Google_Collection
   public function getBuildStepImages()
   {
     return $this->buildStepImages;
+  }
+  public function setBuildStepOutputs($buildStepOutputs)
+  {
+    $this->buildStepOutputs = $buildStepOutputs;
+  }
+  public function getBuildStepOutputs()
+  {
+    return $this->buildStepOutputs;
   }
   /**
    * @param Google_Service_CloudBuild_BuiltImage
@@ -43,5 +62,13 @@ class Google_Service_CloudBuild_Results extends Google_Collection
   public function getImages()
   {
     return $this->images;
+  }
+  public function setNumArtifacts($numArtifacts)
+  {
+    $this->numArtifacts = $numArtifacts;
+  }
+  public function getNumArtifacts()
+  {
+    return $this->numArtifacts;
   }
 }

@@ -15,9 +15,12 @@
  * the License.
  */
 
-class Google_Service_Compute_Scheduling extends Google_Model
+class Google_Service_Compute_Scheduling extends Google_Collection
 {
+  protected $collection_key = 'nodeAffinities';
   public $automaticRestart;
+  protected $nodeAffinitiesType = 'Google_Service_Compute_SchedulingNodeAffinity';
+  protected $nodeAffinitiesDataType = 'array';
   public $onHostMaintenance;
   public $preemptible;
 
@@ -28,6 +31,20 @@ class Google_Service_Compute_Scheduling extends Google_Model
   public function getAutomaticRestart()
   {
     return $this->automaticRestart;
+  }
+  /**
+   * @param Google_Service_Compute_SchedulingNodeAffinity
+   */
+  public function setNodeAffinities($nodeAffinities)
+  {
+    $this->nodeAffinities = $nodeAffinities;
+  }
+  /**
+   * @return Google_Service_Compute_SchedulingNodeAffinity
+   */
+  public function getNodeAffinities()
+  {
+    return $this->nodeAffinities;
   }
   public function setOnHostMaintenance($onHostMaintenance)
   {

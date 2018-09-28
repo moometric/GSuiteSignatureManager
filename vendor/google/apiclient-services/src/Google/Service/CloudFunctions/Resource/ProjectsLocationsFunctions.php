@@ -107,7 +107,7 @@ class Google_Service_CloudFunctions_Resource_ProjectsLocationsFunctions extends 
    *
    * When making a HTTP PUT request, these two headers need to be specified:
    *
-   * * `content-type: application/zip` * `x-google-content-length-range:
+   * * `content-type: application/zip` * `x-goog-content-length-range:
    * 0,104857600` (functions.generateUploadUrl)
    *
    * @param string $parent The project and location in which the Google Cloud

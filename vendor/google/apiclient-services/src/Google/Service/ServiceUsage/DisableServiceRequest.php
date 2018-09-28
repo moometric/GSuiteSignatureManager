@@ -17,4 +17,14 @@
 
 class Google_Service_ServiceUsage_DisableServiceRequest extends Google_Model
 {
+  public $disableDependentServices;
+
+  public function setDisableDependentServices($disableDependentServices)
+  {
+    $this->disableDependentServices = $disableDependentServices;
+  }
+  public function getDisableDependentServices()
+  {
+    return $this->disableDependentServices;
+  }
 }

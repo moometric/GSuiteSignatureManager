@@ -18,6 +18,7 @@
 class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1WebhookResponse extends Google_Collection
 {
   protected $collection_key = 'outputContexts';
+  public $endInteraction;
   protected $followupEventInputType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EventInput';
   protected $followupEventInputDataType = '';
   protected $fulfillmentMessagesType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage';
@@ -28,6 +29,14 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1WebhookResponse exte
   public $payload;
   public $source;
 
+  public function setEndInteraction($endInteraction)
+  {
+    $this->endInteraction = $endInteraction;
+  }
+  public function getEndInteraction()
+  {
+    return $this->endInteraction;
+  }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1EventInput
    */

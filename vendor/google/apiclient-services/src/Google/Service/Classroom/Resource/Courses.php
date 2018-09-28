@@ -103,12 +103,6 @@ class Google_Service_Classroom_Resource_Courses extends Google_Service_Resource
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string studentId Restricts returned courses to those having a
-   * student with the specified identifier. The identifier can be one of the
-   * following:
-   *
-   * * the numeric identifier for the user * the email address of the user * the
-   * string literal `"me"`, indicating the requesting user
    * @opt_param string pageToken nextPageToken value returned from a previous list
    * call, indicating that the subsequent page of results should be returned.
    *
@@ -127,6 +121,12 @@ class Google_Service_Classroom_Resource_Courses extends Google_Service_Resource
    * @opt_param string courseStates Restricts returned courses to those in one of
    * the specified states The default value is ACTIVE, ARCHIVED, PROVISIONED,
    * DECLINED.
+   * @opt_param string studentId Restricts returned courses to those having a
+   * student with the specified identifier. The identifier can be one of the
+   * following:
+   *
+   * * the numeric identifier for the user * the email address of the user * the
+   * string literal `"me"`, indicating the requesting user
    * @return Google_Service_Classroom_ListCoursesResponse
    */
   public function listCourses($optParams = array())

@@ -61,9 +61,6 @@ class Google_Service_Dataproc_Resource_ProjectsRegionsClusters extends Google_Se
    * @param string $clusterName Required. The cluster name.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string clusterUuid Optional. Specifying the cluster_uuid means the
-   * RPC should fail (with error NOT_FOUND) if cluster with specified UUID does
-   * not exist.
    * @opt_param string requestId Optional. A unique id used to identify the
    * request. If the server receives two DeleteClusterRequest requests with the
    * same id, then the second request will be ignored and the first
@@ -72,6 +69,9 @@ class Google_Service_Dataproc_Resource_ProjectsRegionsClusters extends Google_Se
    * (https://en.wikipedia.org/wiki/Universally_unique_identifier).The id must
    * contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and hyphens
    * (-). The maximum length is 40 characters.
+   * @opt_param string clusterUuid Optional. Specifying the cluster_uuid means the
+   * RPC should fail (with error NOT_FOUND) if cluster with specified UUID does
+   * not exist.
    * @return Google_Service_Dataproc_Operation
    */
   public function delete($projectId, $region, $clusterName, $optParams = array())
@@ -118,6 +118,23 @@ class Google_Service_Dataproc_Resource_ProjectsRegionsClusters extends Google_Se
     return $this->call('get', array($params), "Google_Service_Dataproc_Cluster");
   }
   /**
+   * Gets the access control policy for a resource. Returns an empty policy if the
+   * resource exists and does not have a policy set. (clusters.getIamPolicy)
+   *
+   * @param string $resource REQUIRED: The resource for which the policy is being
+   * requested. See the operation documentation for the appropriate value for this
+   * field.
+   * @param Google_Service_Dataproc_GetIamPolicyRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Dataproc_Policy
+   */
+  public function getIamPolicy($resource, Google_Service_Dataproc_GetIamPolicyRequest $postBody, $optParams = array())
+  {
+    $params = array('resource' => $resource, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('getIamPolicy', array($params), "Google_Service_Dataproc_Policy");
+  }
+  /**
    * Lists all regions/{region}/clusters in a project.
    * (clusters.listProjectsRegionsClusters)
    *
@@ -127,8 +144,6 @@ class Google_Service_Dataproc_Resource_ProjectsRegionsClusters extends Google_Se
    * the request.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pageToken Optional. The standard List page token.
-   * @opt_param int pageSize Optional. The standard List page size.
    * @opt_param string filter Optional. A filter constraining the clusters to
    * list. Filters are case-sensitive and have the following syntax:field = value
    * AND field = value ...where field is one of status.state, clusterName, or
@@ -140,6 +155,8 @@ class Google_Service_Dataproc_Resource_ProjectsRegionsClusters extends Google_Se
    * Only the logical AND operator is supported; space-separated items are treated
    * as having an implicit AND operator.Example filter:status.state = ACTIVE AND
    * clusterName = mycluster AND labels.env = staging AND labels.starred = *
+   * @opt_param string pageToken Optional. The standard List page token.
+   * @opt_param int pageSize Optional. The standard List page size.
    * @return Google_Service_Dataproc_ListClustersResponse
    */
   public function listProjectsRegionsClusters($projectId, $region, $optParams = array())
@@ -194,5 +211,42 @@ class Google_Service_Dataproc_Resource_ProjectsRegionsClusters extends Google_Se
     $params = array('projectId' => $projectId, 'region' => $region, 'clusterName' => $clusterName, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Dataproc_Operation");
+  }
+  /**
+   * Sets the access control policy on the specified resource. Replaces any
+   * existing policy. (clusters.setIamPolicy)
+   *
+   * @param string $resource REQUIRED: The resource for which the policy is being
+   * specified. See the operation documentation for the appropriate value for this
+   * field.
+   * @param Google_Service_Dataproc_SetIamPolicyRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Dataproc_Policy
+   */
+  public function setIamPolicy($resource, Google_Service_Dataproc_SetIamPolicyRequest $postBody, $optParams = array())
+  {
+    $params = array('resource' => $resource, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('setIamPolicy', array($params), "Google_Service_Dataproc_Policy");
+  }
+  /**
+   * Returns permissions that a caller has on the specified resource. If the
+   * resource does not exist, this will return an empty set of permissions, not a
+   * NOT_FOUND error.Note: This operation is designed to be used for building
+   * permission-aware UIs and command-line tools, not for authorization checking.
+   * This operation may "fail open" without warning. (clusters.testIamPermissions)
+   *
+   * @param string $resource REQUIRED: The resource for which the policy detail is
+   * being requested. See the operation documentation for the appropriate value
+   * for this field.
+   * @param Google_Service_Dataproc_TestIamPermissionsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_Dataproc_TestIamPermissionsResponse
+   */
+  public function testIamPermissions($resource, Google_Service_Dataproc_TestIamPermissionsRequest $postBody, $optParams = array())
+  {
+    $params = array('resource' => $resource, 'postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('testIamPermissions', array($params), "Google_Service_Dataproc_TestIamPermissionsResponse");
   }
 }

@@ -33,6 +33,7 @@ class Google_Service_Compute_ForwardingRule extends Google_Collection
   public $loadBalancingScheme;
   public $name;
   public $network;
+  public $networkTier;
   public $portRange;
   public $ports;
   public $region;
@@ -127,6 +128,14 @@ class Google_Service_Compute_ForwardingRule extends Google_Collection
   public function getNetwork()
   {
     return $this->network;
+  }
+  public function setNetworkTier($networkTier)
+  {
+    $this->networkTier = $networkTier;
+  }
+  public function getNetworkTier()
+  {
+    return $this->networkTier;
   }
   public function setPortRange($portRange)
   {

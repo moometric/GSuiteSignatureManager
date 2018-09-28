@@ -23,6 +23,7 @@ class Google_Service_Bigquery_Dataset extends Google_Collection
   public $creationTime;
   protected $datasetReferenceType = 'Google_Service_Bigquery_DatasetReference';
   protected $datasetReferenceDataType = '';
+  public $defaultPartitionExpirationMs;
   public $defaultTableExpirationMs;
   public $description;
   public $etag;
@@ -69,6 +70,14 @@ class Google_Service_Bigquery_Dataset extends Google_Collection
   public function getDatasetReference()
   {
     return $this->datasetReference;
+  }
+  public function setDefaultPartitionExpirationMs($defaultPartitionExpirationMs)
+  {
+    $this->defaultPartitionExpirationMs = $defaultPartitionExpirationMs;
+  }
+  public function getDefaultPartitionExpirationMs()
+  {
+    return $this->defaultPartitionExpirationMs;
   }
   public function setDefaultTableExpirationMs($defaultTableExpirationMs)
   {

@@ -41,7 +41,6 @@ class Google_Service_Surveys extends Google_Service
   const USERINFO_EMAIL =
       "https://www.googleapis.com/auth/userinfo.email";
 
-  public $mobileapppanels;
   public $results;
   public $surveys;
   
@@ -58,53 +57,6 @@ class Google_Service_Surveys extends Google_Service
     $this->version = 'v2';
     $this->serviceName = 'surveys';
 
-    $this->mobileapppanels = new Google_Service_Surveys_Resource_Mobileapppanels(
-        $this,
-        $this->serviceName,
-        'mobileapppanels',
-        array(
-          'methods' => array(
-            'get' => array(
-              'path' => 'mobileAppPanels/{panelId}',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'panelId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'mobileAppPanels',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'startIndex' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'token' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'update' => array(
-              'path' => 'mobileAppPanels/{panelId}',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'panelId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
     $this->results = new Google_Service_Surveys_Resource_Results(
         $this,
         $this->serviceName,

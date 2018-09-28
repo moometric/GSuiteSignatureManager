@@ -17,6 +17,8 @@
 
 class Google_Service_Sheets_BasicChartSeries extends Google_Model
 {
+  protected $colorType = 'Google_Service_Sheets_Color';
+  protected $colorDataType = '';
   protected $lineStyleType = 'Google_Service_Sheets_LineStyle';
   protected $lineStyleDataType = '';
   protected $seriesType = 'Google_Service_Sheets_ChartData';
@@ -24,6 +26,20 @@ class Google_Service_Sheets_BasicChartSeries extends Google_Model
   public $targetAxis;
   public $type;
 
+  /**
+   * @param Google_Service_Sheets_Color
+   */
+  public function setColor(Google_Service_Sheets_Color $color)
+  {
+    $this->color = $color;
+  }
+  /**
+   * @return Google_Service_Sheets_Color
+   */
+  public function getColor()
+  {
+    return $this->color;
+  }
   /**
    * @param Google_Service_Sheets_LineStyle
    */
